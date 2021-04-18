@@ -147,12 +147,13 @@ primary_widgets = [
 
     icon(bg='color2', text=' '),   # Icono de Tiempo
 
-    widget.OpenWeather(**base(bg='color2'), cityid='3882582', format='{main_temp}°C'),  # Temperatura en °C
+    widget.OpenWeather(**base(bg='color2'), cityid='tu city id', format='{main_temp}°C'),  # Temperatura en °C
         #   Para tener temperatura local ir a https://openweathermap.org/ 
         #   buscar tu ciudad o la mas cercana y metete a su info 
         #   ahora mira la url del sitio, deberia ser algo asi:
         #   https://openweathermap.org/city/[numeros]
-        #   copia los numeros de la url y pegalos en cityid
+        #   copia los numeros de la url y pegalos en cityid de tal manera:
+        #   cityid='000000'
 
     flecha_L('dark', 'color2'),
 
