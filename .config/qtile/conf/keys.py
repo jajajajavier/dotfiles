@@ -87,10 +87,10 @@ keys = [
     # Brillo, xbacklight 
 
     # Subir brillo un 5%
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set +5%"),   desc="Fn + Flecha izquierda"),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5%"),   desc="Fn + Flecha izquierda"),
 
     # Bajar brillo un 5%
-    Key([], "XF86MonBrightnessUp", lazy.spwan("brightnessctl set +5%"),     desc="Fn + Flecha derecha"),
+    Key([], "XF86MonBrightnessDown", lazy.spwan("xbacklight -dec 5%"),     desc="Fn + Flecha derecha"),
 
 
    # >>>>>>>>>>>>>>>|Otros|<<<<<<<<<<<<<<<
