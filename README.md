@@ -16,6 +16,6 @@ paru -S firefox
 paru -S pulseaudio pavucontrol pamixer
 paru -S ranger
 paru -S feh
-´´´
-(.screenshot/qtile1.png)
-(.screenshot/qtile2.png)
+```
+[](.screenshot/qtile1.png)
+[](.screenshot/qtile2.png)
