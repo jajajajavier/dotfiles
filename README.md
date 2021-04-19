@@ -182,10 +182,10 @@ y configurarlo
 llegamos a la parte de instalar el sistema
 primero vamos a instalar el sistema base, vamos a instalar los sigientes
 paquetes                                                                                    
-base : instala el sistema base
-linux : instala el kernel
-linux firmware : instala el firmware XD
-base-devel : otras utilidades importantes
+base : instala el sistema base                                                      
+linux : instala el kernel                                                           
+linux firmware : instala el firmware XD                                                   
+base-devel : otras utilidades importantes                                                         
 ```bash
 pacstrap /mnt base linux linux-firmware base-devel
 ```
