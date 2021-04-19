@@ -12,8 +12,8 @@ tambien su guia de instalacion en español
   https://wiki.archlinux.org/index.php/Installation_guide_(Espa%C3%B1ol)
 
 # -Preinstalacion
-primero debiste arrancar el sistema en un live usb o cd si es 
-asi debes estar dentro de una terminal, ya podemos empezar
+primero debiste arrancar el sistema en un live usb o cd, si es 
+asi debes estar dentro de una terminal.
 
 vamos por cambiar la distribucion de teclado porque al menos yo
 no tengo un teclado gringo.
@@ -44,7 +44,6 @@ si dice Hard bloqued:yes  es porque esta bloqueada, la desbloqueamos con:
 rfkill unblock wifi
 ```
 Para conectarnos a ua red wifi tenemos que usar iwctl
-(omitir si estas por cable de red asta salir de iwctl)
 ```bash
 iwctl
 ```
@@ -63,3 +62,29 @@ ping google.com
 ```
 si empieza a transmitir datos es que estamos conectados
 
+Generar locales, para eso vamos a editar el archivo /etc/locale.gen
+```bash
+nano /etc/locale.gen
+```
+buscamos y descomentamos el de nuestro pais con utf-8, en mi caso que es 
+chile seria:
+```bash
+de esto: 
+# es_CL.UTF-8
+a esto:
+es_CL.UTF-8
+```
+ctrl + o para guardar los cambios, apretamos enter y ctrl + x para salir
+ahora ejecutamos
+```bash
+locale-gen
+```
+
+Para actualizar el reloj del sistema es con 
+```bash
+timedatectl set-ntp true
+```
+comprobamos con 
+```bash
+timedatectl status
+```
