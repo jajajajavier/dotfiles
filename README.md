@@ -1,21 +1,13 @@
 # dotfiles
-my arch config qtile español
+mi configuracion de arch en español, qtile
 
-Paquetes. Necesitas un AUR helper para instalar las nerd fonts
+# Arch guia de instalacion (UEFI) :
 
-```bash
-nerd-fonts
-nerd-fonts-ubuntu-mono
-nerd-fonts-mononoki
-nerd-fonts-cascadia-code
-nerd-fonts-hermit
-xbacklight
-feh
-rofi
-firefox
-pulseaudio pavucontrol pamixer
-ranger
-feh
-```
-![](.screenshot/qtile1.png)
-![](.screenshot/qtile2.png)
+esta es una guia de instalacion limpia de arch linux en maquinas
+uefi, puede que en tu dispositivo tenga errores u otra cosa asi 
+que aqui te dejo la santa biblia de arch su wiki oficial
+  https://wiki.archlinux.org/  
+tambien su guia de instlacion en español
+  https://wiki.archlinux.org/index.php/Installation_guide_(Espa%C3%B1ol)
+
+# Preinstalacion
