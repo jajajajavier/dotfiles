@@ -137,8 +137,55 @@ FAT32 y para eso escribimos:
 ```bash
 mkfs.fat -F32 /dev/sdaX
 ```
+ahora para darle formato y formatear el raiz / y el /home se ocupa el formato .ext4
+de tal manera
+```bash
+mkfs.ext4 /dev/sdaX
+```
+tienes que escribir eso con ambas.                                                             
+Y para la particion swap le tenemos que decir al sistema que tal particion va a ser
+para el swap con:
+```bash
+mkswap /dev/sdaX
+```
+y la activamos
+```bash
+swapon /dev/sdaX
+```
+Ahora montamos las particiones en sus respectivos directorios.                                
+la particion raiz / tiene que ir montada en /mnt
+```bash
+mount /dev/sdaX /mnt
+```
+la particion uefi la vamos a colocar en /boot/EFI,                                      
+primero creamos el directorio con 
+```bash
+mkdir /mnt/boot/EFI
+```
+y ahora lo montamos en este
+```bash
+mount /dev/sdaX /mnt/boot/EFI
+```
+para montar el /home primero se debe crear su directorio con
+```bash
+mkdir /mnt/home
+```
+y lo montamos hay 
+```bash
+mount /dev/sdaX /mnt/home
+```
+Listo :) ya tienes montadas las particiones, ahora solo falta instalar el sistema
+y configurarlo 
 
+# -Instalacion
 
-
-
-
+llegamos a la parte de instalar el sistema
+primero vamos a instalar el sistema base, vamos a instalar los sigientes
+paquetes                                                                                    
+base : instala el sistema base
+linux : instala el kernel
+linux firmware : instala el firmware XD
+base-devel : otras utilidades importantes
+```bash
+pacstrap /mnt base linux linux-firmware base-devel
+```
