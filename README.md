@@ -74,7 +74,7 @@ de esto:
 a esto:
 es_CL.UTF-8
 ```
-ctrl + o para guardar los cambios, apretamos enter y ctrl + x para salir
+ctrl + o para guardar los cambios apretamos enter y ctrl + x para salir,
 ahora ejecutamos
 ```bash
 locale-gen
@@ -84,7 +84,17 @@ Para actualizar el reloj del sistema es con
 ```bash
 timedatectl set-ntp true
 ```
-comprobamos con 
+comprobamos que este bien 
 ```bash
 timedatectl status
+```
+
+Particionar el disco, en esta parte si tienes windows u otro sistema
+avansa con cuidado para no cagarla, si quieres tener arch junto con windows 
+primero debiste crear una particion desde el admministrador de discos de windows
+
+para particionar vamos a utilizar cfdisk para facilitarnos el trabajo y
+sea mas facil de entender lo que estamos haciendo
+```bash
+cfdisk
 ```
