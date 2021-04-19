@@ -10,4 +10,4 @@ que aqui te dejo la santa biblia de arch su wiki oficial
 tambien su guia de instlacion en español
   https://wiki.archlinux.org/index.php/Installation_guide_(Espa%C3%B1ol)
 
-# Preinstalacion
+#   Preinstalacion
