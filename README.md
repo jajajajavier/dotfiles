@@ -30,7 +30,7 @@ internet esta abierta con:
 ```bash
 ip link
 ```
-si en el 2° dice DOWN es porque esta bloqueada y tendremos que escribir
+si dice DOWN es porque esta bloqueada y tendremos que escribir
 ```bash
 ip link set [tu interfas] up
 ```
@@ -189,3 +189,7 @@ base-devel : otras utilidades importantes
 ```bash
 pacstrap /mnt base linux linux-firmware base-devel
 ```
+si tienes un internet tercermundista como yo de 300kbs de descarga                    
+esto va a tener para rato, haci que levantate de esa silla                             
+muevete un poco y come algo :)                                                
+
