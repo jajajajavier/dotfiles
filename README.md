@@ -6,10 +6,9 @@ mi configuracion de arch en español, qtile
 
 esta es una guia de instalacion limpia de arch linux en maquinas
 uefi, puede que en tu dispositivo tenga errores u otra cosa asi 
-que aqui te dejo la santa biblia de arch su wiki oficial
-  https://wiki.archlinux.org/  
-tambien su guia de instalacion en español
-  https://wiki.archlinux.org/index.php/Installation_guide_(Espa%C3%B1ol)
+que aqui te dejo la santa biblia de arch su **[wiki oficial](https://wiki.archlinux.org/)**   
+tambien su **[guia de instalacion](https://wiki.archlinux.org/index.php/Installation_guide_(Espa%C3%B1ol))** 
+en español
 
 # -Preinstalacion
 primero debiste arrancar el sistema en un live usb o cd, si es 
@@ -93,8 +92,24 @@ Particionar el disco, en esta parte si tienes windows u otro sistema
 avansa con cuidado para no cagarla, si quieres tener arch junto con windows 
 primero debiste crear una particion desde el admministrador de discos de windows
 
-para particionar vamos a utilizar cfdisk para facilitarnos el trabajo y
-sea mas facil de entender lo que estamos haciendo
+para crear las particiones de arch vamos a utilizar cfdisk para facilitarnos 
+el trabajo y que sea mas facil de entender lo que estamos haciendo
 ```bash
 cfdisk
 ```
+como estamos en uefi vamos a tener que crear una particion (si ya la tienes omites esto),
+para ello vamos a movernos a la particion en la que queremos instalar arch, seleccionamos
+new y escribimos el tamaño de la particion que son 100mb
+```bash 
+100M
+```
+Ahora vamos a crear las particiones para el sistema de Arch, lo recomendable es tener
+siquiera 3 particiones, uno para el swap, otro para el raiz / , y uno para el /home. 
+Para todas esta particiones vas a tener que decidir tu cuanto le quieres dar, te recomiendo pensar
+bien cuanto darle a cada uno. Cuando ya sabes cuanto le quieres dar a cada uno solo tienes que
+seleccionar la particion vacia, ir a new y escribir el tamaño de la particion.
+Cuando ya tengas las aprticiones para arch ve a Write y escribe:
+```bash
+yes
+```
+luego seleccionas Quit para salir
