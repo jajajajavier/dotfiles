@@ -101,7 +101,7 @@ timedatectl status
 ```
 
 Particionar el disco, en esta parte si tienes windows u otro sistema
-avansa con cuidado para no cagarla, si quieres tener arch junto con windows 
+avanza con cuidado para no cagarla, si quieres tener arch junto con windows 
 primero debiste crear una particion desde el admministrador de discos de windows
 
 para crear las particiones de arch vamos a utilizar cfdisk para facilitarnos 
@@ -132,7 +132,7 @@ luego seleccionas Quit para salir de cfdisk
 
 Ya tenemos las particiones, ahora solo falta formatearlas y darles un formato,
 para la particion UEFI (en caso de que la creaste) tenemos que darle un formato  de
-FAT32 y para eso escribimos:
+FAT32 y para eso escribimos:            
 ""la X representa el numero de tu particion""
 ```bash
 mkfs.fat -F32 /dev/sdaX
