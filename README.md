@@ -30,11 +30,18 @@ internet esta abierta con:
 ```bash
 ip link
 ```
-si lo esta tenemos que escribir
+si en el 2° dice DOWN es porque esta bloqueada y tendremos que escribir
 ```bash
 ip link set [tu interfas] up
 ```
-tambien veremos que tu tarjeta wifi no este bloqueada con 
+Si tienes internet mediante cable de red con tenerlo conectado basta,
+comprueba que tienes internet con:
+```bash
+ping google.com
+```
+pero si usas wifi tendras que hacer los sigientes procesos. 
+
+veremos que tu tarjeta wifi no este bloqueada con 
 ```bash
 rfkill list
 ```
@@ -42,24 +49,28 @@ si dice Hard bloqued:yes  es porque esta bloqueada, la desbloqueamos con:
 ```bash
 rfkill unblock wifi
 ```
-Para conectarnos a ua red wifi tenemos que usar iwctl
+Para conectarnos a una red wifi tenemos que usar iwctl
 ```bash
 iwctl
 ```
 en el escribimos 
 ```bash
-station [tu interfas] connect [el nombre de la red wifi, SSID]
+station [tu interfas] connect [el nombre de la red wifi, el SSID]
 ```
 nos va a pedir la contraseña de la red y la escribimos, para salir escribimos
 exit 
 ```bash
 exit
 ```
-ahora comprobamos que estamos con internet escribiendo
+ahora comprobamos que tenemos acceso a internet escribiendo
 ```bash
 ping google.com
 ```
-si empieza a transmitir datos es que estamos conectados
+si empieza a transmitir datos es que estamos correctamente conectados,
+si sale *fallo temporal en la resolucion del nombre* entonces hay un error
+y tendremos que comprobar nuevamente que esten desbloqueadas tu interfas y 
+la tarjeta wifi ademas de volver a intentar la conexion a la red wifi 
+mediante iwctl, si sige con error te recomiendo leer la info de la wiki
 
 Generar locales, para eso vamos a editar el archivo /etc/locale.gen
 ```bash
@@ -70,6 +81,7 @@ chile seria:
 ```bash
 de esto: 
 # es_CL.UTF-8
+
 a esto:
 es_CL.UTF-8
 ```
@@ -97,19 +109,36 @@ el trabajo y que sea mas facil de entender lo que estamos haciendo
 ```bash
 cfdisk
 ```
-como estamos en uefi vamos a tener que crear una particion (si ya la tienes omites esto),
+como estamos en uefi vamos a tener que crear una particion EFI (si ya la tienes omites esto),
 para ello vamos a movernos a la particion en la que queremos instalar arch, seleccionamos
-new y escribimos el tamaño de la particion que son 100mb
+new y escribimos el tamaño de la particion que son 260mb
 ```bash 
-100M
+260M
 ```
 Ahora vamos a crear las particiones para el sistema de Arch, lo recomendable es tener
 siquiera 3 particiones, uno para el swap, otro para el raiz / , y uno para el /home. 
-Para todas esta particiones vas a tener que decidir tu cuanto le quieres dar, te recomiendo pensar
-bien cuanto darle a cada uno. Cuando ya sabes cuanto le quieres dar a cada uno solo tienes que
-seleccionar la particion vacia, ir a new y escribir el tamaño de la particion.
-Cuando ya tengas las aprticiones para arch ve a Write y escribe:
+Para todas esta particiones vas a tener que decidir tu cuanto le quieres dar, te 
+recomiendo pensar bien cuanto darle a cada uno. Cuando ya sabes cuanto le quieres 
+dar a cada uno solo tienes que seleccionar la particion vacia del disco, ir a new 
+y escribir el tamaño de la particion. Cuando ya tengas las particiones para arch ve 
+a Write y escribe:
 ```bash
 yes
 ```
-luego seleccionas Quit para salir
+listo las particiones ya estan echas, recuerda o anota el numero de cada una, por ejemplo
+si la particion para el swap la quieres en /dev/sda2 recuerda ese 2, lo mismo para las demas
+
+luego seleccionas Quit para salir de cfdisk
+
+Ya tenemos las particiones, ahora solo falta formatearlas y darles un formato,
+para la particion UEFI (en caso de que la creaste) tenemos que darle un formato  de
+FAT32 y para eso escribimos:
+""la X representa el numero de tu particion""
+```bash
+mkfs.fat -F32 /dev/sdaX
+```
+
+
+
+
+
