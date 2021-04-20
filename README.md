@@ -7,6 +7,9 @@ con qtile un gestor de ventanas
 
 # Arch guia de instalacion (UEFI) :
 -[Preinstalacion](#-Preinstalacion)
+-[Instalacion](#-Instalacion)
+-[configurar](#-Configurar arch)
+-[Post instalacion](#-Post instalacion)
 
 esta es una guia de instalacion limpia de arch linux en maquinas
 uefi, puede que en tu dispositivo tenga errores u otra cosa asi 
@@ -357,7 +360,7 @@ umount -R /mnt
 reboot
 ```
 
-# -post instalacion
+# -Post instalacion
 luego de que el pc se alla reiniciado puedes sacar el  usb o cd 
 en el que tenias el sistema live. Ahora el sistema te pedira logearte
 colocas tu usuario y contraseña que creaste para este, estas otra ves en 
@@ -388,7 +391,7 @@ y personalisar tu arch linux.
 # Mi configuracion de Qtile
 si gustas puedes ver mi configuracion de Qtil en arch, 
 **[Qtile](http://www.qtile.org/)** es un gestor de ventanas en baldosa
-escrito en python 
-                                                                                 
-![mi configuracion]
-
+escrito en python.                                                       
+**[mi configuracion]**
+![](https://github.com/jajajajavier/dotfiles/.screenshot/qtile_1.png)
+![](https://github.com/jajajajavier/dotfiles/.screenshot/qtile_2.png)
