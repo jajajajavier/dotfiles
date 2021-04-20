@@ -1,8 +1,12 @@
-# dotfiles
+# Dotfiles
 mi configuracion de arch en español, qtile
 
+# Mi configuracion 
+**[aqui]()** te dejo mi configuracion de arch linux 
+con qtile un gestor de ventanas
 
 # Arch guia de instalacion (UEFI) :
+-[Preinstalacion](# -Preinstalacion)
 
 esta es una guia de instalacion limpia de arch linux en maquinas
 uefi, puede que en tu dispositivo tenga errores u otra cosa asi 
@@ -379,7 +383,12 @@ si transfiere datos es porque estamos correctamente conectados, si no vuelve a r
 tu interfas y volver a conectarte a tu red.                                 
 Con esto concluyo la guia, ahora tienes una instalacion limpia de arch, puedes insta
 lar los paquetes que quieras con pacman, tambien puedes instalarte un entorno grafico
-y personalisar tu arch linux.  si gustas puedes                                                             
-                                                                                                               
-                                                                                                               
+y personalisar tu arch linux.                                                           
+                                                           
+# Mi configuracion de Qtile
+si gustas puedes ver mi configuracion de Qtil en arch, 
+**[Qtile](http://www.qtile.org/)** es un gestor de ventanas en baldosa
+escrito en python 
+                                                                                 
 ![mi configuracion]
+
