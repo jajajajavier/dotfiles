@@ -208,7 +208,8 @@ Ahora entramos dentro de arch como root
 ```bash
 arch-chroot /mnt
 ```
-Zona horaria, para colocar tu zona horaria hay que ejecutar
+Ahora que estamos dentro de arch hay que configurar algunas cosas como la
+zona horaria, para colocar tu zona horaria hay que ejecutar
 ```bash
 ln -sf /usr/share/zoneinfo/Region/Ciudad /etc/localtime
 ```
