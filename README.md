@@ -142,7 +142,7 @@ de tal manera
 ```bash
 mkfs.ext4 /dev/sdaX
 ```
-tienes que escribir eso con ambas.                                                             
+tienes que escribir eso con ambas particiones.                                                             
 Y para la particion swap le tenemos que decir al sistema que tal particion va a ser
 para el swap con:
 ```bash
