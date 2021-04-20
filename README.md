@@ -262,7 +262,8 @@ y en el escribes
 ```bash
 LANG=es_[las siglas de tu pais tipo CL para chile].UTF-8
 ```
-para mantener tu distribucion de teclado para despues del reinicio es
+para mantener tu distribucion de teclado para despues del reinicio 
+creas el archivo /etc/locale.conf
 ```bash
 nano /etc/locale.conf
 ```
@@ -321,7 +322,7 @@ bajas hasta la linea
 ```
 y la descomentas. guardas con ctrl + o y sales con ctrl + x.
 listo ya podrias reiniciar pero, te olvidas de una cosa crack,
-el internet, adsi que vamos a crear el hostname con 
+el internet, asi que vamos a crear el hostname con 
 ```bash
 nano /etc/hostname
 ```
@@ -378,7 +379,7 @@ si transfiere datos es porque estamos correctamente conectados, si no vuelve a r
 tu interfas y volver a conectarte a tu red.                                 
 Con esto concluyo la guia, ahora tienes una instalacion limpia de arch, puedes insta
 lar los paquetes que quieras con pacman, tambien puedes instalarte un entorno grafico
-y personalisar tu arch linux.                                                               
+y personalisar tu arch linux.  si gustas puedes                                                             
                                                                                                                
                                                                                                                
 ![mi configuracion]
