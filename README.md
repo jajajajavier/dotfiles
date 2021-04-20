@@ -8,8 +8,8 @@ con qtile un gestor de ventanas
 # Arch guia de instalacion (UEFI) :
 -[Preinstalacion](#-Preinstalacion)
 -[Instalacion](#-Instalacion)
--[configurar](#-Configurar arch)
--[Post instalacion](#-Post instalacion)
+-[configurar](#-Configurar-arch)
+-[Post instalacion](#-Post-instalacion)
 
 esta es una guia de instalacion limpia de arch linux en maquinas
 uefi, puede que en tu dispositivo tenga errores u otra cosa asi 
