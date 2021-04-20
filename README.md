@@ -336,7 +336,7 @@ debajo del texto que viene tienes que colocar lo sigiente, de tal manera
 ::1         localhost
 127.0.1.1   [tu hostname].localdomain   [tu hostname]
 ```
-ahora instalas el network manager
+ahora instalas el network manager para tener acceso a conectarse a internet
 ```bash
 pacman -S networkmanager
 ```
