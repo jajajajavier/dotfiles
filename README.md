@@ -193,3 +193,107 @@ si tienes un internet tercermundista como yo de 300kbs de descarga
 esto va a tener para rato, haci que levantate de esa silla                             
 muevete un poco y come algo :)                                                
 
+# -Configurar arch
+
+debemos generar el archivo fstab, para ello lo hacemos con:
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+comprobamos que todo este en orden 
+```bash
+cat /mnt/etc/fstab
+```
+hay leemos que cada particion este con su respectivo directorio.     
+Ahora entramos dentro de arch como root
+```bash
+arch-chroot /mnt
+```
+Zona horaria, para colocar tu zona horaria hay que ejecutar
+```bash
+ln -sf /usr/share/zoneinfo/Region/Ciudad /etc/localtime
+```
+en donde pudes ver las opciones para Region con 
+```bash
+ls /usr/share/zoneinfo/
+``` 
+si tu pais esta hay colocas tu pais si no colocas el continente en que
+se encuentra, en el caso de chile ya esta en esa lista y deberias volver
+a enlistar de tal manera 
+```bash 
+ls /usr/share/zoneinfo/Chile/
+```
+y ves las opciones, en mi caso quedaria tal que haci 
+```bash
+/usr/share/zoneinfo/Chile/Continental
+```
+si en Region colocaste un continente luego tienes que simplemente
+colocar tu ciudad.                                                                    
+ahora ejecutas hwclock
+```bash
+hwclock --systohc
+```
+puedes ver que la hora este bien con 
+```bash
+date
+```
+Localizacion, para colocar tu localizacion edita /etc/locale.gen
+pero primero necesitas un editor de texto como nano y lo instalas 
+de la sigiente manera
+```bash
+pacman -S nano
+```
+ahora si edita /etc/locale.gen
+```bash
+nano /etc/locale.gen
+```
+aca descomentas tu pais que termine en UTF-8, guardas cambios
+con ctrl + o y sales con ctrl + x, ahora ejecutas
+```bash
+locale-gen
+```
+si no te llevas muy bien con el ingles puedes cambiar el idioma para 
+despues del reinicio.                                                 
+para ponerlo en español es
+```bash
+nano /etc/locale.conf
+```
+y en el escribes
+```bash
+LANG=es_[las siglas de tu pais tipo CL para chile].UTF-8
+```
+para mantener tu distribucion de teclado para despues del reinicio es
+```bash
+nano /etc/locale.conf
+```
+y en el escribes
+```bash
+KEYMAP=es 
+```
+o para latam 
+```bash
+KEYMAP=la-latin1
+```
+Instalar el grub. necesitamos grub para arrancar el sistema
+al prender el pc, instalamos los sigientes paquetes
+```bash
+pacman -S grub efibootmgr os-prober
+```
+instalamos grub con 
+```bash
+grub-install --target=x86_64-efi --bootloader-id=GRUB-arch
+```
+ejecutamos os-prober para detectar otros sistemas operativos
+```bash
+os-prober
+```
+y terminamos la instalacion de grub configurandolo con 
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+listo ya tenemos el grub                                                          
+ahora vamos a colocarle una contraseña al usuario root
+```bash
+passwd
+```
+y escribes tu contraseña dos veces
+
