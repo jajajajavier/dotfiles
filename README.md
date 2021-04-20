@@ -320,6 +320,64 @@ bajas hasta la linea
 ```
 y la descomentas. guardas con ctrl + o y sales con ctrl + x.
 listo ya podrias reiniciar pero, te olvidas de una cosa crack,
-el internet, haci que vamos a crear el hostname con 
+el internet, adsi que vamos a crear el hostname con 
+```bash
+nano /etc/hostname
+```
+en el escribes tu hostname, puede ser cualquier cosa, luego de eso vamos a 
+editar el archivo hosts
+```bash
+nano /etc/hosts
+```
+debajo del texto que viene tienes que colocar lo sigiente, de tal manera
+```bash
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   [tu hostname].localdomain   [tu hostname]
+```
+ahora instalas el network manager
+```bash
+pacman -S networkmanager
+```
+y lo activas con
+```bash
+systemctl enable NetworkManager
+```
+listo el sistema ya esta instalado falta salir de la imagen  iso , desmontar las 
+particiones y reiniciar el sistema 
+```bash
+exit
+umount -R /mnt
+reboot
+```
 
-
+# -post instalacion
+luego de que el pc se alla reiniciado puedes sacar el  usb o cd 
+en el que tenias el sistema live. Ahora el sistema te pedira logearte
+colocas tu usuario y contraseña que creaste para este, estas otra ves en 
+la terminal, ahora tenemos que activar tu nueva interfas de internet 
+para ello volvemos a usar ip link 
+```bash
+ip link
+```
+si tu interfas esta en DOWN la tenemos que activar, esto con 
+```bash
+ip link set [TU INTERFAS] up
+```
+y queda conectarse a una red wifi, otra ves si usas cable de red no hagas esto.
+Para conectarnos a una red wifi vamos a usar la opcion nmcli de network manager
+```bash
+nmcli device wifi connect [EL NOMBRE DE LA RED] password [CONTRASEÑA DE LA RED]
+```
+y listo probamos que estemos conectados con 
+```
+ping google.com
+```
+si transfiere datos es porque estamos correctamente conectados, si no vuelve a revisar 
+tu interfas y volver a conectarte a tu red.                                 
+Con esto concluyo la guia, ahora tienes una instalacion limpia de arch, puedes insta
+lar los paquetes que quieras con pacman, tambien puedes instalarte un entorno grafico
+y personalisar tu arch linux.                                                               
+                                                                                                               
+                                                                                                               
+![mi configuracion]
