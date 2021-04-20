@@ -393,5 +393,7 @@ si gustas puedes ver mi configuracion de Qtil en arch,
 **[Qtile](http://www.qtile.org/)** es un gestor de ventanas en baldosa
 escrito en python.                                                       
 **[mi configuracion]**
+
 ![](.screenshot/qtile1.png)
+
 ![](.screenshot/qtile2.png)
