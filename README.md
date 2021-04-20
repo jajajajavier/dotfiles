@@ -295,5 +295,31 @@ ahora vamos a colocarle una contraseña al usuario root
 ```bash
 passwd
 ```
-y escribes tu contraseña dos veces
+y escribes tu contraseña dos veces. Ahora toca crear tu usuario
+pero primero instalamos sudo
+```bash
+pacman -S sudo
+```
+y ahora agregamos tu usuario
+```bash
+useradd -m [NOMBRE DE USUARIO]
+```
+y le pones contraseña
+```bash
+passwd [NOMBRE DE USUARIO]
+```
+tenemos que darle atributos a ciertas cosas a tu usuario,
+para eso ejecutamos
+```bash
+usermod -aG wheel,audio,video,optical,storage [NOMBRE DE USUARIO]
+EDITOR=nano visudo
+```
+bajas hasta la linea 
+```bash
+# %wheel ALL=(ALL) ALL
+```
+y la descomentas. guardas con ctrl + o y sales con ctrl + x.
+listo ya podrias reiniciar pero, te olvidas de una cosa crack,
+el internet, haci que vamos a crear el hostname con 
+
 
