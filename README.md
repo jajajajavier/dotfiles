@@ -396,7 +396,7 @@ y personalisar tu arch linux.
 si gustas puedes ver mi configuracion de Qtile en arch, 
 **[Qtile](http://www.qtile.org/)** es un gestor de ventanas en baldosa
 escrito en python.                                                       
-**[mi configuracion](https://github.com/jajajajavier/dotfiles/tree/master/.config/README.md))**
+**[mi configuracion](https://github.com/jajajajavier/dotfiles/tree/master/.config/README.md)**
 
 ![](.screenshot/qtile1.png)
 
