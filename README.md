@@ -2,7 +2,7 @@
 mi configuracion de arch en español, qtile
 
 # Mi configuracion 
-**[aqui](https://github.com/jajajajavier/dotfiles/.config/README.md)** te dejo mi configuracion de arch linux 
+**[aqui](https://github.com/jajajajavier/dotfiles/tree/master/.config/README.md)** te dejo mi configuracion de arch linux 
 con qtile un gestor de ventanas
 
 # Arch guia de instalacion (UEFI) :
