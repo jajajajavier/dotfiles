@@ -2,7 +2,7 @@
 mi configuracion de arch en español, qtile
 
 # Mi configuracion 
-**[aqui](.config/README.md)** te dejo mi configuracion de arch linux 
+**[aqui](https://github.com/jajajajavier/dotfiles/.config/README.md)** te dejo mi configuracion de arch linux 
 con qtile un gestor de ventanas
 
 # Arch guia de instalacion (UEFI) :
@@ -396,7 +396,7 @@ y personalisar tu arch linux.
 si gustas puedes ver mi configuracion de Qtile en arch, 
 **[Qtile](http://www.qtile.org/)** es un gestor de ventanas en baldosa
 escrito en python.                                                       
-**[mi configuracion](.config/README.md)**
+**[mi configuracion](https://github.com/jajajajavier/dotfiles/.config/README.md)**
 
 ![](.screenshot/qtile1.png)
 
