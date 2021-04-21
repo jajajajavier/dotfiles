@@ -393,7 +393,7 @@ los paquetes que quieras con pacman, tambien puedes instalarte un entorno grafic
 y personalisar tu arch linux.                                                           
                                                            
 # Mi configuracion de Qtile
-si gustas puedes ver mi configuracion de Qtil en arch, 
+si gustas puedes ver mi configuracion de Qtile en arch, 
 **[Qtile](http://www.qtile.org/)** es un gestor de ventanas en baldosa
 escrito en python.                                                       
 **[mi configuracion]**
