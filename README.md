@@ -224,7 +224,7 @@ en donde pudes ver las opciones para Region con
 ```bash
 ls /usr/share/zoneinfo/
 ``` 
-si tu pais esta hay colocas tu pais si no colocas el continente en que
+si tu pais esta, colocas tu pais si no colocas el continente en que
 se encuentra, en el caso de chile ya esta en esa lista y deberias volver
 a enlistar de tal manera 
 ```bash 
