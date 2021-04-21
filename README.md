@@ -388,8 +388,8 @@ ping google.com
 ```
 si transfiere datos es porque estamos correctamente conectados, si no vuelve a revisar 
 tu interfas y volver a conectarte a tu red.                                 
-Con esto concluyo la guia, ahora tienes una instalacion limpia de arch, puedes insta
-lar los paquetes que quieras con pacman, tambien puedes instalarte un entorno grafico
+Con esto concluyo la guia, ahora tienes una instalacion limpia de arch, puedes instalar 
+los paquetes que quieras con pacman, tambien puedes instalarte un entorno grafico
 y personalisar tu arch linux.                                                           
                                                            
 # Mi configuracion de Qtile
