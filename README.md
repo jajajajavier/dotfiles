@@ -230,9 +230,13 @@ a enlistar de tal manera
 ```bash 
 ls /usr/share/zoneinfo/Chile/
 ```
-y ves las opciones, en mi caso quedaria tal que haci 
+y ves las opciones, en el caso de chile se veria haci 
 ```bash
 /usr/share/zoneinfo/Chile/Continental
+```
+y ahora escribimos el comando del principio con los datos
+```bash
+ln -sf /usr/share/zoneinfo/Chile/Continental /etc/localtime
 ```
 si en Region colocaste un continente luego tienes que simplemente
 colocar tu ciudad.                                                                    
