@@ -332,8 +332,8 @@ bajas hasta la linea
 # %wheel ALL=(ALL) ALL
 ```
 y la descomentas. guardas con ctrl + o y sales con ctrl + x.
-listo ya podrias reiniciar pero, te olvidas de una cosa crack,
-el internet, asi que vamos a crear el hostname con 
+listo ya podrias reiniciar pero te olvidas de una cosa crack,
+¡el internet!, asi que vamos a crear el hostname con 
 ```bash
 nano /etc/hostname
 ```
