@@ -143,7 +143,7 @@ widgets_1 = [
 
     icono(bg='color2', text=' '),   
 
-    widget.OpenWeather(**base(bg='color2'), cityid='3882582', format='{main_temp}°C'),  # Temperatura en °C
+    widget.OpenWeather(**base(bg='color2'), cityid='xdxdxd', format='{main_temp}°C'),  # Temperatura en °C
         #   Para tener tempertura local ir a https://openweathermap.org/ 
         #   buscar tu ciudad o la mas cercana y metete a su info 
         #   ahora mira la url del sitio, deberia ser algo asi:
