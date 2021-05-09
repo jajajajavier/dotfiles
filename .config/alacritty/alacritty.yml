@@ -9,7 +9,7 @@
 
 # >>>>>>>>>>>>>>>Opacidad<<<<<<<<<<<<<<<
 
-background_opacity: 0.88
+background_opacity: 0.92
 
 
 # >>>>>>>>>>>>>>>Colores<<<<<<<<<<<<<<<
@@ -89,7 +89,7 @@ cursor:
   
   # Estilo del cursor 
   style:
-    shape: Underline
+    shape: Beam
     # Valores para shape:
     #   Block       ▇ 
     #   Underline   _
