@@ -1,4 +1,4 @@
-"eovim config
+" Neovim config
 " 
 " By javier
 " https://github.com/jajajajavier
@@ -8,6 +8,7 @@
 set nocompatible	" required
 filetype off		" required
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin('~/.vim/plugged')
 
 
