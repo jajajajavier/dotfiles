@@ -1,3 +1,3 @@
 # Dotfiles
 mi configuracion de arch en español, qtile
-![](.screenshots/qtile.png)
+![](.screenshot/qtile.png)
