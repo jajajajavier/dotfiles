@@ -44,7 +44,7 @@ layouts = [
     # layout.Matrix(**layout_conf),    
     # layout.Stack(num_stacks=2),
     # layout.Zoomy(**layout_conf),
-    # layout.MonadTall(**layout_conf),
+    layout.MonadTall(**layout_conf),
     layout.Columns(**layout_conf),
     layout.Max(),
     layout.Tile(**layout_conf),
