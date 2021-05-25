@@ -196,7 +196,7 @@ widgets_1 = [
     # Temperature in Celsius, I don't yanqui XD
     widget.OpenWeather(         #   for have local temperature visit: https://openweathermap.org/
         **base(bg='color2'),    #   search your city and open his info
-        cityid='3882582',       #   look te numbers in the url : 
+        cityid='1234567',       #   look te numbers in the url : 
         format='{main_temp}°C'  #   https://openweathermap.org/city/[numbers]
         ),                      #   copy the numbers after /city/ and
                                 #   paste in cityid: cityid='12345678',       
