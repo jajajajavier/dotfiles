@@ -11,7 +11,7 @@ from libqtile import qtile
 Win = "mod4"                                # Windows key
 Alt = "mod1"                                # Alt key 
 MyTerm = "alacritty"
-MyBrowser = "firefox-developer-edition"
+MyBrowser = "firefox"
 MyFileManager = "Thunar"
 
 
