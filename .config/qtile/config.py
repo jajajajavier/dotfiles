@@ -5,7 +5,7 @@
 # Default config: 
 # http://qtile.org
 #
-# make in arch linux 
+# made in arch linux 
 
 # ---------------|Config imports|--------------- 
 
@@ -41,4 +41,4 @@ wmname = "LG3D"
 #   youtube: https://youtube.com/antoniosarosi
 #   Github: https://github.com/antoniosarosi
 #
-# Warh their chanels
+# Watch their chanels
