@@ -1,5 +1,5 @@
 # Neovim config
-![](screenshot.png)
+![](.screenshot/neovim.png)
 
 This config use Vundle plugin manager, for installing Vundle is with
 ```bash
