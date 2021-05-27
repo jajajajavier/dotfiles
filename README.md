@@ -91,7 +91,14 @@ setxkbmap [you keyboard distribution] &
 ~/.fehbg &
 ```
 ### gtk
-in my dotfiles 
+in my dotfiles there is a tar.gz file with themes and icons gtk, 
+extract the tar.gz and move the content
+```bash
+cd dotfiles
+tar -xvf gtk.tar.gz
+sudo mv icons/* /usr/share/icons
+sudo mv themes/* /usr/share/icons
+```
 
 ### Enable lightdm 
 you can start qtile, for this you need enable lightdm
@@ -102,4 +109,31 @@ and reboot
 ```
 reboot
 ```
-### Wallpaper
+### Wallpaper and gtk 
+open a terminal with windows + enter and open firefox with
+windows + B
+
+from internet you can download a wallpaper :) and use it 
+```bash
+feh --bg-scale /route/of/wallpaper
+```
+with lxappearance you can change the gtk theme , open lxappearance with rofi, 
+open rofi: windows + Backspace
+and change the theme, icon and cursor 
+
+### Local temperature and CPU RAM consume
+for obtain local temperature you need edit the widget file in ~/.config/qtile/conf/widget.py.
+in the widget.OpenWeather section change the value of cityid, the city id
+is obtain *[here](https://openweathermap.org/)*, search your city open the info and look the 
+numbers in the url,
+```bash
+https://openweathermap.org/city/[numbers]
+```
+change the cityid value for you numbers
+```bash
+cityid='[NUMBERS]'
+```
+the widget for the consume of CPU and Ram need the psutil
+```bash
+sudo pacman -S psutil
+```
