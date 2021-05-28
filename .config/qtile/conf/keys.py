@@ -10,9 +10,9 @@ from libqtile import qtile
 
 Win = "mod4"                                # Windows key
 Alt = "mod1"                                # Alt key 
-MyTerm = "alacritty"
-MyBrowser = "firefox"
-MyFileManager = "Thunar"
+MyTerm = "alacritty"                        # Edit for your terminal
+MyBrowser = "firefox"                       # Edit for your browser
+MyFileManager = "Thunar"                    # Edit for your File manager
 
 
 #-------------------- Keybindings-------------------- 
@@ -31,10 +31,10 @@ keys = [
     Key([Win, "shift"], "k", lazy.layout.shuffle_up(),       desc="Win + Shift + K"),
 
     # Resize the windows
-    Key([Win, "control"], "h", lazy.layout.grow_left(),      desc="Win + Control izq. + H"),
-    Key([Win, "control"], "l", lazy.layout.grow_right(),     desc="Win + Control izq. + L"),
-    Key([Win, "control"], "j", lazy.layout.grow_down(),      desc="Win + Control izq. + J"),
-    Key([Win, "control"], "k", lazy.layout.grow_up(),        desc="Win + Control izq. + K"),
+    Key([Win, "control"], "h", lazy.layout.grow_left(),      desc="Win + Control + H"),
+    Key([Win, "control"], "l", lazy.layout.grow_right(),     desc="Win + Control + L"),
+    Key([Win, "control"], "j", lazy.layout.grow_down(),      desc="Win + Control + J"),
+    Key([Win, "control"], "k", lazy.layout.grow_up(),        desc="Win + Control + K"),
     
     # Change the focus windows 
     Key([Win], "h", lazy.layout.left(),                      desc="Win + H"),
@@ -46,38 +46,35 @@ keys = [
     Key([Alt], "Tab", lazy.layout.next(),                       desc="Alt + Tab"),
 
     # Resize the windows to normal size  
-    Key([Win], "Delete", lazy.layout.normalize(),               desc="Win + Suprimir"),
+    Key([Win], "Delete", lazy.layout.normalize(),               desc="Win + Supr"),
 
     # Close the focus windows
     Key([Win], "q", lazy.window.kill(),                         desc="Win + q"),
-
-    # Bring the windows to front
-    Key([Win, "shift"], "space", lazy.window.bring_to_front(),  desc="Win + Shift + Espacio"),
     
     # Fullscreen 
     Key([Win], "F11", lazy.window.toggle_fullscreen(),          desc="Win + F11"),
 
-    # Place windows on tiling 
-    Key([Win], "space", lazy.window.toggle_floating(),          desc="Win + Espacio"),
+    # Place windows on tiling or bring to front
+    Key([Win], "space", lazy.window.toggle_floating(),          desc="Win + Space"),
 
     
     # >>>>>>>>>>>>>>>|Qtile|<<<<<<<<<<<<<<<
 
     # Restart Qtile
-    Key([Win, "control"], "r", lazy.restart(),                  desc="Win + Control izq. + r"),
+    Key([Win, "control"], "r", lazy.restart(),                  desc="Win + Control + r"),
 
     # Shutdown Qtile
-    Key([Win, "control"], "q", lazy.shutdown(),                 desc="Win + Control izq. + q"),
+    Key([Win, "control"], "q", lazy.shutdown(),                 desc="Win + Control + q"),
     
      
     # >>>>>>>>>>>>>>>|Audio and brightness|<<<<<<<<<<<<<<<
 
     # Audio, pamixer ----------
     # Decrease volume
-    Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer --decrease 2"),     desc="Fn + Flecha abajo"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer --decrease 2"),     desc="Fn + Down"),
 
     # Increase volume
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer --increase 2"),     desc="Fn + Flecha arriba"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer --increase 2"),     desc="Fn + Up"),
     
     # Open pavucontrol
     Key([Win], "v", lazy.spawn("pavucontrol")),
@@ -85,22 +82,22 @@ keys = [
 
     # Brillo, xbacklight ------
     # Increase brightness  5%
-    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -inc 5%"),   desc="Fn + Flecha izquierda"),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -inc 5%"),   desc="Fn + Left"),
 
     # Decrease Brightness  5%
-    Key([], "XF86MonBrightnessUp", lazy.spwan("xbacklight -dec 5%"),     desc="Fn + Flecha derecha"),
+    Key([], "XF86MonBrightnessUp", lazy.spwan("xbacklight -dec 5%"),     desc="Fn + Right"),
 
 
-   # >>>>>>>>>>>>>>>|Otros|<<<<<<<<<<<<<<<
+   # >>>>>>>>>>>>>>>|apps|<<<<<<<<<<<<<<<
    
     # Terminal 
     Key([Win], "Return", lazy.spawn(MyTerm),                                 desc="Win + Enter"),
     
     # WIndows menu
-    Key([Win, "shift"], "BackSpace", lazy.spawn("rofi -show"),              desc="Win + Shift + Borrar"),
+    Key([Win, "shift"], "BackSpace", lazy.spawn("rofi -show"),              desc="Win + Shift + Backspace"),
     
     # Run apps
-    Key([Win], "BackSpace", lazy.spawn("rofi -show run"),                   desc="Win + Borrar"),
+    Key([Win], "BackSpace", lazy.spawn("rofi -show run"),                   desc="Win + Backspace"),
     
     # Browser
     Key([Win], "b", lazy.spawn(MyBrowser),                                  desc="Win + b"),
@@ -127,10 +124,10 @@ keys = [
 mouse = [
     
     # Float windows
-    Drag([Win, "shift"], "Button1", lazy.window.set_position_floating(),    desc="Win + Shift + Click izq.",
+    Drag([Win, "shift"], "Button1", lazy.window.set_position_floating(),    desc="Win + Shift + Left click",
         start=lazy.window.get_position()),
     
     # Resize the floating windows
-    Drag([Win, "shift"], "Button3", lazy.window.set_size_floating(),        desc="Win + Shift + Click der.",
+    Drag([Win, "shift"], "Button3", lazy.window.set_size_floating(),        desc="Win + Shift + Right click",
         start=lazy.window.get_size()),
 ]
