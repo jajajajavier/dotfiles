@@ -77,6 +77,10 @@ sudo pacman -S pulseaudio pavucontrol pamixer
 ```
 
 ## Configuring
+for screenshots create the screenshot folder
+```bash
+mkdir screenshot
+```
 
 ### Xprofile
 first create the .xprofile file
