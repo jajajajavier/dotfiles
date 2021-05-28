@@ -151,6 +151,8 @@ you can edit the config files :)
 
 keys                  | Info
 ----------------------|-----------------
+Win + Numbers         | Change workspace
+Win + Shift + Numbers | Move window to another workspace
 Win + Shift + Tab     | Change window orientation
 Win + Shift + H       | Move window to left
 Win + Shift + J       | Move window to down
