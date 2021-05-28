@@ -4,9 +4,8 @@
 # https://github.com/jajajajavier
 
 
-from libqtile   import widget
-from conf.theme import colors
-from libqtile   import qtile
+from libqtile    import widget
+from conf.layout import colors
 
 
 # >>>>>>>>>>|Elements|<<<<<<<<<<
