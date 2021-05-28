@@ -5,8 +5,11 @@
 
 from libqtile import layout 
 from libqtile.config import Match
-from conf.theme import colors
+import json
 
+# Colors
+with open('.config/qtile/conf/theme.json') as f:
+    colors = json.load(f)
 
 # Config of WIndows orientation
 layout_conf = {
