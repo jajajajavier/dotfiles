@@ -81,7 +81,7 @@ for screenshots create the screenshot folder
 ```bash
 mkdir screenshot
 ```
-watch *[here](.config/nvim/README.md)* for configuring Neovim
+see *[here](.config/nvim/README.md)* for configuring Neovim
 
 ### Xprofile
 first create the .xprofile file
