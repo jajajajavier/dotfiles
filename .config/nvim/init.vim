@@ -14,14 +14,14 @@ call vundle#begin('~/.vim/plugged')
 
 Plugin 'VundleVim/Vundle.vim'		" Vundle required
 
-Plugin 'rakr/vim-one' 			" Theme
+Plugin 'rakr/vim-one' 			" Theme Night-owl
 Plugin 'vim-airline/vim-airline'	" Airline
+Plugin 'vim-airline/vim-airline-themes' " Airline themes
 
 Plugin 'scrooloose/nerdtree'		" Nerd Tree
 Plugin 'ryanoasis/vim-devicons'		" Icons for vim :)
 Plugin 'christoomey/vim-tmux-navigator'	" Tmux navigation
 Plugin 'ap/vim-css-color'		" Preview css colors  
-Plugin 'Townk/vim-autoclose'		" Autocomplete brackets
 Plugin 'codota/tabnine-vim'		" Machine learning autocomplete 
 " see https://tabnine.com/semantic for info of the semantic completion
 
@@ -43,9 +43,9 @@ set clipboard=unnamedplus
 
 
 " ---------------|Aparience|---------------
-colorscheme one
+colorscheme night-owl
 set termguicolors
-let g:one_allow_italics = 1
+let g:airline_theme='base16_snazzy'
 let g:airline#extensions#tabline#enabled = 1
 
 
