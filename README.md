@@ -1,7 +1,7 @@
 # Dotfiles
 my qtile arch configs
 
-![](.screenshot/qtile.png)
+![](screenshot/qtile.png)
 
 Sorry my english is very bad, i'm don't speak this language
 
