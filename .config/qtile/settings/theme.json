@@ -1,0 +1,11 @@
+{
+"background": "#011627",
+"foreground": "#d6deeb",
+"focus":     ["#80a4c2", "#80a4c2"],
+"inactive":   "#1d3b53",
+"red":	      "#ef5350",
+"yellow":     "#f2c979",
+"blue":	      "#82aaff",
+"orange":     "#f78c6c",
+"purple":     "#994dcc"
+}
