@@ -126,22 +126,6 @@ with lxappearance you can change the gtk theme , open lxappearance with rofi,
 open rofi: windows + Backspace
 and change the theme, icon and cursor 
 
-### Local temperature, CPU and RAM consume
-for obtain local temperature you need edit the widget file in ~/.config/qtile/conf/widget.py.
-in the widget.OpenWeather section change the value of cityid, the city id
-is obtain *[here](https://openweathermap.org/)*, search your city open the info and look the 
-numbers in the url,
-```bash
-https://openweathermap.org/city/[numbers]
-```
-change the cityid value for you numbers
-```bash
-cityid='[NUMBERS]'
-```
-the widget for the consume of CPU and Ram need the psutil
-```bash
-sudo pacman -S psutil
-```
 # Finish
 Ready, you have my cofig, thanks.
 you can edit the config files :)
