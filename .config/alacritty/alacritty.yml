@@ -1,0 +1,67 @@
+# Alacritty config 
+# by javier
+# https://github.com/jajajajavier
+
+# >>>>>>>>>>>>>>>Opacity<<<<<<<<<<<<<<<
+background_opacity: 0.9
+
+# >>>>>>>>>>>>>>>Colors<<<<<<<<<<<<<<<
+
+colors:
+  # Default colors
+  primary:
+    background:   '#011627'
+    foreground:   '#d6deeb'
+
+ # Normal colors
+  normal:
+    black:   '#2e2e2e'
+    red:     '#ef5350'
+    green:   '#22da6e'
+    yellow:  '#addb67'
+    blue:    '#82aaff'
+    magenta: '#c792ea'
+    cyan:    '#21c7a8'
+    white:   '#e5e9f0'
+
+
+# >>>>>>>>>>>>>>>Fonts<<<<<<<<<<<<<<< 
+#
+# You need the following fonts
+# installation with AUR helper:
+# 
+# nerd-fonts-hack
+
+font:
+  
+  bold:
+    family: Hack Nerd Font
+
+  italic:
+    family: Hack Nerd Font
+
+  normal:
+    family: Hack Nerd Font
+   
+    style: Regular
+  
+  # letter size
+  size: 6
+
+# >>>>>>>>>>>>>>>Others<<<<<<<<<<<<<<<
+
+cursor:
+  
+  # Cursor style
+  style:
+    shape: Beam
+    # Values for shape:
+    #   Block       ▇ 
+    #   Underline   _
+    #   Beam        |
+
+# Padding 
+window:
+  padding:
+    x: 3
+    y: 2
