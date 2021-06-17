@@ -21,7 +21,6 @@ Plugin 'scrooloose/nerdtree'		" Nerd Tree
 Plugin 'ryanoasis/vim-devicons'		" Icons for vim :)
 Plugin 'christoomey/vim-tmux-navigator'	" Tmux navigation
 Plugin 'ap/vim-css-color'		" Preview css colors  
-Plugin 'mattn/emmet-vim'		" html, css and js autocompletion
 Plugin 'codota/tabnine-vim'		" Machine learning autocomplete 
 " see https://tabnine.com/semantic for info of the semantic completion
 
@@ -44,7 +43,7 @@ set clipboard=unnamedplus
 " ---------------|Aparience|---------------
 colorscheme night-owl
 set termguicolors
-let g:airline_theme='base16_snazzy'
+let g:airline_theme='night_owl'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
