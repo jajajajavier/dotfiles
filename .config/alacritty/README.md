@@ -2,14 +2,9 @@
 
 ![](/.screenshot/alacritty.png)
 
-you need the following fonts.
+you need this font.
 
 installation with AUR helper:
 ```bash
-nerd-fonts
-nerd-fonts-ubuntu-mono
-nerd-fonts-mononoki
-nerd-fonts-cascadia-code
-nerd-fonts-hermit
 nerd-fonts-hack
 ```
