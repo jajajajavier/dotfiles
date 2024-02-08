@@ -1,0 +1,27 @@
+add_newline = false
+
+format = """$username[@](green)$hostname$directory$git_branch [\\$](cyan) """
+
+[username]
+style_user = "cyan bold"
+style_root = "red bold"
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](purple)"
+trim_at = ".companyname.com"
+disabled = false
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = "󰌾 "
+style = "blue"
+read_only_style = "yellow"
+format = "  [ ]($style)[$read_only]($read_only_style)[$path]($style)"
+
+[git_branch]
+symbol = "  "
+format = "[$symbol$branch(:$remote_branch)]($style)"

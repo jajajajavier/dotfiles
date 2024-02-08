@@ -1,0 +1,77 @@
+format = """
+$status    $cmd_duration
+$username[@](green)$hostname$localip$directory$git_branch$git_status$package$python${custom.cpp}
+ [\\$](cyan) """
+
+add_newline = false
+scan_timeout = 10
+
+[status]
+disabled = false
+style = "bold red"
+symbol = "   "
+format = "[$symbol$status$signal_name]($style) "
+
+[username]
+style_user = "cyan bold"
+style_root = "red bold"
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](purple)"
+trim_at = ".companyname.com"
+disabled = false
+
+[localip]
+ssh_only = true
+disabled = false
+style = "cyan"
+format = "[ $localipv4]($style)"
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = "󰌾 "
+style = "blue"
+read_only_style = "yellow"
+format = "  [ ]($style)[$read_only]($read_only_style)[$path]($style)"
+
+[git_branch]
+symbol = "  "
+format = "[$symbol$branch(:$remote_branch)]($style)"
+
+[git_status]
+style = "bold yellow"
+
+[package]
+style = "red"
+format = "  [ $version]($style)"
+
+[cmd_duration]
+min_time = 1000
+format = "[󰔛 $duration](green)"
+
+# Programming languages
+[python]
+symbol = "   "
+style = "yellow"
+format = "[$symbol$version]($style)"
+
+[nodejs]
+symbol = "   "
+style = "green"
+format = "[$symbol$version]($style)"
+
+[haskell]
+symbol = "   "
+style = "purple"
+format = "[$symbol$version]($style)"
+
+[custom.cpp]
+command = 'g++ --version | grep -m 1 -o -E "[0-9|.]+" | head -1'
+detect_extensions = ['cpp', 'cc']
+style = 'blue'
+symbol = '   '
+format = '[$symbol$output]($style)'
