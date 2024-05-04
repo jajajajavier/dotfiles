@@ -6,18 +6,15 @@ import qualified XMonad.StackSet as W
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
-import XMonad.Util.Run (spawnPipe, hPutStrLn)
+import XMonad.Util.Run
 
 -- Layouts
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.Spacing
 
 -- Misc
-import XMonad.Actions.UpdatePointer (updatePointer)
+import XMonad.Actions.UpdatePointer
 import qualified XMonad as C
-
-path :: String
-path = "~/.cabal/bin/"
 
 myTerminal :: String
 myTerminal = "alacritty"
@@ -79,33 +76,21 @@ myKeys = [
   ++ -- Move focused windows to worspace
   [("M-S-" ++ show n, windows $ W.shift x) | (n, x) <- zip [1..9] myWorkspaces]
 
-yellow, blue, gray, green, cyan, magenta, red, foreground, background :: String
-yellow      = "#E5C07B"
-blue        = "#61AFEF" 
-green       = "#98C379"
-red         = "#E06C75"
-cyan        = "#56B6C2"
-gray        = "#4C566A"
-magenta     = "#C678DD"
-foreground  = "#ABB2BF"
-background  = "#1E2127"
-
 main :: IO()
 main = do
-  startXmobar <- spawnPipe $ path ++ "xmobar ~/.config/xmobar/xmobar.hs"
+  startXmobar <- spawnPipe "xmobar ~/.config/xmobar/xmobar.hs"
 
   xmonad . xmobarProp $ def {
   modMask  = mod4Mask,
   terminal = myTerminal,
   workspaces = myWorkspaces,
+  keys = (`mkKeymap` myKeys),
 
   borderWidth = 1,
   normalBorderColor = background,
   focusedBorderColor = blue,
 
   layoutHook = myLayout,
-  keys = (`mkKeymap` myKeys),
-
   logHook = dynamicLogWithPP xmobarPP {
     ppOutput = hPutStrLn startXmobar,
     ppTitle = xmobarColor foreground "" . shorten 45,
@@ -119,3 +104,14 @@ main = do
   } 
   >> updatePointer (0.5 , 0.5) (0.5 , 0.5) -- set pointer position
 }
+
+yellow, blue, gray, green, cyan, magenta, red, foreground, background :: String
+yellow      = "#E5C07B"
+blue        = "#61AFEF" 
+green       = "#98C379"
+red         = "#E06C75"
+cyan        = "#56B6C2"
+gray        = "#4C566A"
+magenta     = "#C678DD"
+foreground  = "#ABB2BF"
+background  = "#1E2127"
