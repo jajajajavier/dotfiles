@@ -7,6 +7,11 @@ export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export NPM_CONFIG_PREFIX=~/.npm-global
 
+# Start Window Manager
+if [ `tty` = "/dev/tty1" ]; then
+	startx
+fi
+
 # define editor
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim --clean'
