@@ -35,6 +35,8 @@ myKeys = [
   ("M-b",         spawn "firefox"),
   ("M-f",         spawn "pcmanfm"),
   ("M-d",         spawn "~/.config/rofi/scripts/launcher_t3"),
+  ("M-<Backspace>",         spawn "~/.config/rofi/scripts/powermenu_t2"),
+  ("M-s",         spawn "~/.config/rofi/applets/bin/screenshot.sh"),
 
   ("M-<Tab>",   windows W.focusDown),
   ("M-S-<Tab>", windows W.focusDown),
