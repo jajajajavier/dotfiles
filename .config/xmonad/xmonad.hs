@@ -6,6 +6,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
+import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 
 -- Layouts
@@ -28,6 +29,10 @@ myLayout =
   
   windowNavigation (Tall 1 (3/100) (1/2))
   ||| Full
+
+myStartupHook :: X()
+myStartupHook = do
+  spawnOnce "~/.config/xmonad/autostart"
 
 myKeys :: [(String, X ())]
 myKeys = [
@@ -93,6 +98,7 @@ main = do
   focusedBorderColor = blue,
 
   layoutHook = myLayout,
+  startupHook = myStartupHook,
   logHook = dynamicLogWithPP xmobarPP {
     ppOutput = hPutStrLn startXmobar,
     ppTitle = xmobarColor foreground "" . shorten 45,
