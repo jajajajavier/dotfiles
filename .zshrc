@@ -7,10 +7,6 @@ export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export NPM_CONFIG_PREFIX=~/.npm-global
 
-# Start Window Manager
-if [ `tty` = "/dev/tty1" ]; then
-	startx
-fi
 
 # define editor
 if [[ -n $SSH_CONNECTION ]]; then
@@ -44,3 +40,9 @@ source $ZSH/oh-my-zsh.sh
 # Starship prompt
 eval "$(starship init zsh)"
 source ~/.config/starship/transient.zsh
+
+# Start Window Manager
+if [ `tty` = "/dev/tty1" ]; then
+	startx
+fi
+
