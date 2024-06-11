@@ -1,6 +1,9 @@
 #!/bin/bash
 xsetroot -cursor_name left_ptr
+setxkbmap latam
 ~/.fehbg &
 picom &
 stalonetray &
 nm-applet &
+udiskie -t &
+blueman-applet &
