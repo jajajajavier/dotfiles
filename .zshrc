@@ -3,8 +3,6 @@ export PATH=$PATH:$HOME/.local/bin:/usr/local/bin:$HOME/.npm-global/bin:$HOME/.c
 export ZSH="$HOME/.oh-my-zsh"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export HISTFILE=$HOME/.cache/zsh/zsh_history
-export LANG=en_US.UTF-8
-export ARCHFLAGS="-arch x86_64"
 export NPM_CONFIG_PREFIX=~/.npm-global
 
 
@@ -32,6 +30,7 @@ plugins=(
 	sudo
 	git
 	python
+  copypath
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -42,7 +41,6 @@ eval "$(starship init zsh)"
 source ~/.config/starship/transient.zsh
 
 # Start Window Manager
-if [ `tty` = "/dev/tty1" ]; then
-	startx
-fi
-
+# if [ `tty` = "/dev/tty1" ]; then
+# 	startx
+# fi
