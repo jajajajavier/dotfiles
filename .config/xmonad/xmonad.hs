@@ -18,17 +18,14 @@ import XMonad.Actions.UpdatePointer
 import qualified XMonad as C
 
 myTerminal :: String
-myTerminal = "alacritty"
+myTerminal = "kitty"
 
 myWorkspaces :: [String]
 myWorkspaces = [" \61728 ", " \983609 ", " \985630 ", " \983577 ", " \61912 ", " \62676 ", " \61441 ", " \62599 ", " \62003 "]
 -- ["  ", " 󰈹 ", " 󰨞 ", " 󰈙 ", "  ", "  ", "  ", " 󰡨 ", "  "]
 
 myLayout = 
-  spacing 5 $
-  
-  windowNavigation (Tall 1 (3/100) (1/2))
-  ||| Full
+  smartSpacing 5 (windowNavigation $ Tall 1 (3/100) (1/2)) ||| Full
 
 myStartupHook :: X()
 myStartupHook = do
