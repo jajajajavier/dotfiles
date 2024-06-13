@@ -1,19 +1,23 @@
--- Xmonad basics
+-- XMonad configuration
 import XMonad
 import XMonad.Util.EZConfig
 import qualified XMonad.StackSet as W
 import System.Exit
 
--- Xmobar needed
+-- Imports for Xmobar configuration
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.StatusBar
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 
--- Layouts
+-- Layout Definitions
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.Spacing
+import XMonad.Layout.ThreeColumns
+import XMonad.Layout.Spiral
+import XMonad.Layout.Grid
+import XMonad.Layout.TwoPane
 import XMonad.Layout.NoBorders
 
 -- Misc
@@ -30,12 +34,15 @@ myWorkspaces = [" \61728 ", " \983609 ", " \985630 ", " \983577 ", " \61912 ", "
 -- ["  ", " 󰈹 ", " 󰨞 ", " 󰈙 ", "  ", "  ", "  ", "  ", "  "]
 
 -- Define active layouts
-myLayout = 
- -- add a gap bettwen windows
-  smartSpacing 7 ( 
-    windowNavigation (Tall 1 (3/100) (1/2)) -- Master and stack layout
-  ) ||| 
-  noBorders Full -- Fullscreen layout
+myLayout =  -- smartSpacing sets a gap between windows and screen
+  smartSpacing 7 (windowNavigation $ Tall 1 (3/100) (1/2)) |||            -- Vertical master and stack layout
+  noBorders Full |||                                                      -- Fullscreen layout
+  smartSpacing 7 (windowNavigation $ Mirror (Tall 1 (3/100) (13/25)) |||  -- Horisontal master and stack layout 
+  ThreeColMid 1 (3/100) (1/2) |||                                         -- Three Columns, master in mid
+  Grid |||                                                                -- Put all windows in a square grid
+  spiral (6/7) |||                                                        -- Spiral layout, similar to the Fibonacci spiral 
+  TwoPane (3/100) (1/2)                                                   -- Split screen in two windows, master on the left
+  )                                                                       -- and current focused of a group in the right
 
 -- Execute commands at startup
 myStartupHook :: X()
@@ -44,6 +51,7 @@ myStartupHook = do
 
 -- Key bindings
 myKeys :: [(String, X ())]
+myModMask = mod4Mask :: KeyMask -- Set windows key as mod key 
 myKeys = [
   -- Launch Applications
   ("M-<Return>",    spawn myTerminal),
@@ -110,7 +118,7 @@ main = do
   startXmobar <- spawnPipe "xmobar ~/.config/xmobar/xmobarrc"
 
   xmonad . xmobarProp $ def {
-  modMask  = mod4Mask,
+  modMask  = myModMask,
   terminal = myTerminal,
   workspaces = myWorkspaces,
   keys = (`mkKeymap` myKeys), 
