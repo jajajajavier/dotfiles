@@ -1,0 +1,36 @@
+[global]
+background = "#282c34"
+
+monitor = 0
+transparency = 10
+font = Noto Sans 13
+notification_limit = 6
+
+# geometry
+width   = 450
+height  = 400
+origin  = top-right
+offset  = 7x45
+
+frame_width = 2
+gap_size = 14
+horizontal_padding = 7
+padding = 7
+
+# icon
+icon_theme = Papirus-Dark
+min_icon_size =84
+max_icon_size = 84
+text_icon_padding = 14
+
+[urgency_low]
+foreground = "#abb2bf"
+frame_color = "#56b6c2"
+
+[urgency_normal]
+foreground = "#abb2bf"
+frame_color = "#56b6c2"
+
+[urgency_critical]
+foreground = "#e06c75"
+frame_color = "#d19a66"
