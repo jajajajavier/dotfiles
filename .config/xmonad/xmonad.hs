@@ -1,78 +1,102 @@
+-- Xmonad basics
 import XMonad
 import XMonad.Util.EZConfig
 import qualified XMonad.StackSet as W
+import System.Exit
 
 -- Xmobar needed
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
+import XMonad.Hooks.StatusBar
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 
 -- Layouts
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.Spacing
+import XMonad.Layout.NoBorders
 
 -- Misc
 import XMonad.Actions.UpdatePointer
-import qualified XMonad as C
 
-myTerminal :: String
-myTerminal = "kitty"
+-- Some app declaration
+myTerminal    = "kitty"   :: String
+myWebBrowser  = "firefox" :: String
+myFileManager = "pcmanfm" :: String
 
+-- Workspaces icons
 myWorkspaces :: [String]
 myWorkspaces = [" \61728 ", " \983609 ", " \985630 ", " \983577 ", " \61912 ", " \62676 ", " \61441 ", " \62599 ", " \62003 "]
--- ["  ", " 󰈹 ", " 󰨞 ", " 󰈙 ", "  ", "  ", "  ", " 󰡨 ", "  "]
+-- ["  ", " 󰈹 ", " 󰨞 ", " 󰈙 ", "  ", "  ", "  ", "  ", "  "]
 
+-- Define active layouts
 myLayout = 
-  smartSpacing 5 (windowNavigation $ Tall 1 (3/100) (1/2)) ||| Full
+ -- add a gap bettwen windows
+  smartSpacing 7 ( 
+    windowNavigation (Tall 1 (3/100) (1/2)) -- Master and stack layout
+  ) ||| 
+  noBorders Full -- Fullscreen layout
 
+-- Execute commands at startup
 myStartupHook :: X()
 myStartupHook = do
   spawnOnce "~/.config/xmonad/autostart"
 
+-- Key bindings
 myKeys :: [(String, X ())]
 myKeys = [
-  ("M-<Return>",  spawn myTerminal),
-  ("M-b",         spawn "firefox"),
-  ("M-f",         spawn "pcmanfm"),
-  ("M-d",         spawn "~/.config/rofi/scripts/launcher_t3"),
-  ("M-<Backspace>",         spawn "~/.config/rofi/scripts/powermenu_t2"),
-  ("M-s",         spawn "~/.config/rofi/applets/bin/screenshot.sh"),
+  -- Launch Applications
+  ("M-<Return>",    spawn myTerminal),
+  ("M-f",           spawn myWebBrowser),
+  ("M-e",           spawn myFileManager),
+  ("M-r",           spawn "rofi -show drun"),             -- Run applications
+  ("M1-C-l",        spawn "betterlockscreen -l dimblur"), -- Lock the screen (M1 = alt) 
 
-  ("M-<Tab>",   windows W.focusDown),
-  ("M-S-<Tab>", windows W.focusDown),
-  ("M-t",       withFocused $ windows . W.sink),
-  ("M-m",       windows W.focusMaster),
-  ("M-S-m",     windows W.swapMaster),
+  -- Window Management
+  ("M-q",   kill),                                -- close window
+  ("M-t",       withFocused $ windows . W.sink),  -- toggle floating
 
-  ("M-<Space>",   sendMessage NextLayout),
-  ("M-S-<Space>", sendMessage FirstLayout),
+  -- Layout management
+  ("M-<Space>",   sendMessage NextLayout),        -- Switch between layouts
+  ("M-S-<Space>", sendMessage FirstLayout),       -- Restart to default layout
 
-  ("M-h", sendMessage $ Go L),
-  ("M-j", sendMessage $ Go D),
-  ("M-k", sendMessage $ Go U),
-  ("M-l", sendMessage $ Go R),
+  -- Window movement
+  ("M-m",       windows W.focusMaster),           -- Focus to master pane
+  ("M-<Tab>",   windows W.focusDown),             -- Focus next window
+  ("M-S-<Tab>", windows W.focusUp),               -- Focus prev window
+  ("M-h", sendMessage $ Go L),                    -- Focus left window
+  ("M-j", sendMessage $ Go D),                    -- Focus down window
+  ("M-k", sendMessage $ Go U),                    -- Focus up window
+  ("M-l", sendMessage $ Go R),                    -- Focus right window
 
-  ("M-S-h", sendMessage $ Swap L),
-  ("M-S-j", sendMessage $ Swap D),
-  ("M-S-k", sendMessage $ Swap U),
-  ("M-S-l", sendMessage $ Swap R),
+  -- Swap windows position
+  ("M-S-m",     windows W.swapMaster),            -- Swap focused window with the master
+  ("M-S-h", sendMessage $ Swap L),                -- Swap left window
+  ("M-S-j", sendMessage $ Swap D),                -- Swap down window
+  ("M-S-k", sendMessage $ Swap U),                -- Swap up window
+  ("M-S-l", sendMessage $ Swap R),                -- Swap right window
 
-
-  ("M-C-h", sendMessage Shrink),
+  -- Resize
+  ("M-C-h", sendMessage Shrink), 
   ("M-C-l", sendMessage Expand),
-  ("M-C-n", refresh),
+  ("M-C-n", refresh), -- Restore normal size
+
   -- Audio
   ("<XF86AudioRaiseVolume>", spawn "pamixer -i 5"),
   ("<XF86AudioLowerVolume>", spawn "pamixer -d 5"),
-  ("<XF86AudioMute>", spawn "pamixer -t"),
-  -- Brightness
-  ("<XF86MonBrightnessUp>", spawn "brightnessctl s +5%"),
-  ("<XF86MonBrightnessDown>", spawn "brightnessctl s 5%-"),
+  ("<XF86AudioMute>", spawn "pamixer -t"),              -- Toggle mute the speakers
+  ("<XF86Launch1>",   spawn "pamixer --source 45 -t"),  -- Toggle mute the mic
 
-  ("M-q",   kill),
-  ("M-C-q", spawn "kill -9 -1"),
+  -- Brightness
+  ("<XF86MonBrightnessUp>",   spawn "brightnessctl s +5%"),
+  ("<XF86MonBrightnessDown>", spawn "brightnessctl s 5%-"),
+  
+  -- Keyboard led
+  -- ("<XF86KbdBrightnessUp>",   spawn "brightnessctl -d asus::kbd_backlight s +1"),
+  -- ("<XF86KbdBrightnessDown>", spawn "brightnessctl -d asus::kbd_backlight s 1-"),
+
+  -- Quit and restart Xmonad
+  ("M-C-q", io exitSuccess),
   ("M-C-r", spawn "xmonad --recompile && xmonad --restart")
   ]
   ++ -- Change the current workspace
@@ -80,15 +104,16 @@ myKeys = [
   ++ -- Move focused windows to worspace
   [("M-S-" ++ show n, windows $ W.shift x) | (n, x) <- zip [1..9] myWorkspaces]
 
+
 main :: IO()
 main = do
-  startXmobar <- spawnPipe "xmobar ~/.config/xmobar/xmobar.hs"
+  startXmobar <- spawnPipe "xmobar ~/.config/xmobar/xmobarrc"
 
   xmonad . xmobarProp $ def {
   modMask  = mod4Mask,
   terminal = myTerminal,
   workspaces = myWorkspaces,
-  keys = (`mkKeymap` myKeys),
+  keys = (`mkKeymap` myKeys), 
 
   borderWidth = 1,
   normalBorderColor = background,
@@ -97,15 +122,15 @@ main = do
   layoutHook = myLayout,
   startupHook = myStartupHook,
   logHook = dynamicLogWithPP xmobarPP {
-    ppOutput = hPutStrLn startXmobar,
-    ppTitle = xmobarColor foreground "" . shorten 45,
-    ppCurrent = xmobarColor blue "" . wrap "[" "]",
-    ppHidden = xmobarColor foreground "",
+    ppSep = "<fc="++gray++"> | </fc>", 
     ppHiddenNoWindows = xmobarColor gray "",
+    ppHidden = xmobarColor foreground "",
+    ppCurrent = xmobarColor blue "" . wrap "[" "]",
     ppUrgent = xmobarColor yellow "" . wrap "!" "!",
     ppLayout = xmobarColor cyan "" . wrap "[" "]",
-    ppOrder = \(ws:l:e) -> [ws, l],
-    ppSep = "<fc=#4C566A> | </fc>"
+    ppTitle = xmobarColor foreground "" . shorten 60,
+    ppOrder = \(ws:l:e) -> [ws, l], -- comment if you want the window title
+    ppOutput = hPutStrLn startXmobar
   } 
   >> updatePointer (0.5 , 0.5) (0.5 , 0.5) -- set pointer position
 }

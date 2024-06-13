@@ -3,7 +3,9 @@ xsetroot -cursor_name left_ptr
 setxkbmap latam
 ~/.fehbg &
 picom &
-stalonetray &
+
+# System Tray
+stalonetray -c ~/.config/stalonetrayrc &
 nm-applet &
 udiskie -t &
 blueman-applet &
