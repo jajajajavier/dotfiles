@@ -19,6 +19,7 @@ import XMonad.Layout.Spiral
 import XMonad.Layout.Grid
 import XMonad.Layout.TwoPane
 import XMonad.Layout.NoBorders
+import XMonad.Layout.Renamed
 
 -- Misc
 import XMonad.Actions.UpdatePointer
@@ -34,15 +35,17 @@ myWorkspaces = [" \61728 ", " \983609 ", " \985630 ", " \983577 ", " \61912 ", "
 -- ["  ", " 󰈹 ", " 󰨞 ", " 󰈙 ", "  ", "  ", "  ", "  ", "  "]
 
 -- Define active layouts
-myLayout =  -- smartSpacing sets a gap between windows and screen
-  smartSpacing 7 (windowNavigation $ Tall 1 (3/100) (1/2)) |||            -- Vertical master and stack layout
-  noBorders Full |||                                                      -- Fullscreen layout
-  smartSpacing 7 (windowNavigation $ Mirror (Tall 1 (3/100) (13/25)) |||  -- Horisontal master and stack layout 
-  ThreeColMid 1 (3/100) (1/2) |||                                         -- Three Columns, master in mid
-  Grid |||                                                                -- Put all windows in a square grid
-  spiral (6/7) |||                                                        -- Spiral layout, similar to the Fibonacci spiral 
-  TwoPane (3/100) (1/2)                                                   -- Split screen in two windows, master on the left
-  )                                                                       -- and current focused of a group in the right
+myLayout =  
+  -- smartSpacing sets a gap between windows and screen
+  renamed [CutWordsLeft 1] . smartSpacing 7 . windowNavigation $   
+  Tall 1 (3/100) (1/2) |||              -- Vertical master and stack layout
+  noBorders Full |||                    -- Fullscreen layout
+  Mirror (Tall 1 (3/100) (13/25)) |||   -- Horisontal master and stack layout 
+  ThreeColMid 1 (3/100) (1/2) |||       -- Three Columns, master in mid
+  Grid |||                              -- Put all windows in a square grid
+  spiral (6/7) |||                      -- Spiral layout, similar to the Fibonacci spiral 
+  TwoPane (3/100) (1/2)                 -- Split screen in two windows, master on the left
+                                        -- and current focused of a group in the right
 
 -- Execute commands at startup
 myStartupHook :: X()
