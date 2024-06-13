@@ -118,7 +118,7 @@ myKeys = [
 
 main :: IO()
 main = do
-  startXmobar <- spawnPipe "xmobar ~/.config/xmobar/xmobarrc"
+  startXmobar <- spawnPipe "xmobar ~/.config/xmobar/xmobar.hs"
 
   xmonad . xmobarProp $ def {
   modMask  = myModMask,
@@ -133,7 +133,7 @@ main = do
   layoutHook = myLayout,
   startupHook = myStartupHook,
   logHook = dynamicLogWithPP xmobarPP {
-    ppSep = "<fc="++gray++"> | </fc>", 
+    ppSep = "<fc="++gray++"> \61524 </fc>", 
     ppHiddenNoWindows = xmobarColor gray "",
     ppHidden = xmobarColor foreground "",
     ppCurrent = xmobarColor blue "" . wrap "[" "]",
