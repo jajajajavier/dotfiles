@@ -11,12 +11,12 @@ config = defaultConfig {
   allDesktops = True,
   persistent = True,
   commands = [ 
-    Run $ Com "echo" ["<fc=#4C566A>\xf053</fc>"]  "sep" 1,
+    Run $ Com "echo" ["<fc=#4C566A>\61523</fc>"]  "sep" 1000000000,
     Run $ Com "/home/javier/.config/xmobar/script/battery.sh" [] "batt" 200,
     Run $ Com "/home/javier/.config/xmobar/script/audio.sh" [] "volume" 5,
     Run $ Com "/home/javier/.config/xmobar/script/brightness.sh" [] "brightness" 5,
     Run $ Date "<fc=#61AFEF>\62635 %H:%M</fc>" "time" 10,
-    Run $ Date "<fc=#56B6C2>󱨰 %a, %d %b</fc>" "date" 100000,
+    Run $ Date "<fc=#56B6C2>\989744 %a, %d %b</fc>" "date" 100000,
     Run UnsafeStdinReader
   ],
   sepChar = "%",
