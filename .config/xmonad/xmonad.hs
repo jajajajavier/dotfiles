@@ -37,9 +37,9 @@ myWorkspaces = [" \61728 ", " \983609 ", " \985630 ", " \983577 ", " \61912 ", "
 -- Define active layouts
 myLayout =  
   -- smartSpacing sets a gap between windows and screen
-  renamed [CutWordsLeft 1] . smartSpacing 7 . windowNavigation $   
+  renamed [CutWordsLeft 1] . smartBorders . smartSpacing 7 . windowNavigation $   
   Tall 1 (3/100) (1/2) |||              -- Vertical master and stack layout
-  noBorders Full |||                    -- Fullscreen layout
+  Full |||                              -- Fullscreen layout
   Mirror (Tall 1 (3/100) (13/25)) |||   -- Horisontal master and stack layout 
   ThreeColMid 1 (3/100) (1/2) |||       -- Three Columns, master in mid
   Grid |||                              -- Put all windows in a square grid
@@ -126,7 +126,7 @@ main = do
   workspaces = myWorkspaces,
   keys = (`mkKeymap` myKeys), 
 
-  borderWidth = 1,
+  borderWidth =2,
   normalBorderColor = background,
   focusedBorderColor = blue,
 
