@@ -3,7 +3,7 @@
 # default options
 display_on=0
 span_image=true
-lock_timeout=0 # 300
+lock_timeout=300
 fx_list=(dim blur dimblur pixel dimpixel color)
 dim_level=60
 blur_level=3
@@ -26,7 +26,7 @@ insidevercolor=00000000
 ringwrongcolor=ffffffff
 insidewrongcolor=d23c3dff
 timecolor=ffffffff
-time_format="%H:%M"
+time_format="%d %b %H:%M"
 greetercolor=ffffffff
 layoutcolor=ffffffff
 keyhlcolor=d23c3dff
@@ -37,15 +37,3 @@ wrongtext="Failure!"
 wrongcolor=d23c3dff
 modifcolor=d23c3dff
 bgcolor=000000ff
-
-
-#
-# expert options (change at own risk!)
-#
-
-# i3lockcolor_bin="i3lock-color"      # Manually set command for i3lock-color
-# suspend_command="systemctl suspend" # Manually change action e.g. hibernate/suspend-command
-
-# i3lock-color - custom arguments
-# lockargs=() 						  # overwriting default "(-n)"
-# lockargs+=(--ignore-empty-password) # appending new argument
