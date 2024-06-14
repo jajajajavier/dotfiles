@@ -100,8 +100,8 @@ myKeys = [
   -- Audio
   ("<XF86AudioRaiseVolume>", spawn "pamixer -i 5"),
   ("<XF86AudioLowerVolume>", spawn "pamixer -d 5"),
-  ("<XF86AudioMute>", spawn "pamixer -t"),              -- Toggle mute the speakers
-  ("<XF86Launch1>",   spawn "pamixer --source 45 -t"),  -- Toggle mute the mic
+  ("<XF86AudioMute>", spawn "pamixer -t"),                -- Toggle mute the speakers
+  ("<XF86AudioMicMute>",   spawn "pamixer --source <input_source> -t"),  -- Toggle mute the mic
 
   -- Brightness
   ("<XF86MonBrightnessUp>",   spawn "brightnessctl s +5%"),
