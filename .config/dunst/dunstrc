@@ -1,8 +1,8 @@
 [global]
-background = "#282c34"
+background = "#1e2127"
 
 monitor = 0
-transparency = 10
+transparency = 0
 font = Noto Sans 13
 notification_limit = 6
 
@@ -23,14 +23,26 @@ min_icon_size =84
 max_icon_size = 84
 text_icon_padding = 14
 
+# Mouse
+mouse_left_click = do_action
+mouse_middle_click = open_url
+mouse_right_click = close_current
+
+# Misc
+title = Dunst
+class = Dunst
+
 [urgency_low]
-foreground = "#abb2bf"
+foreground  = "#abb2bf"
 frame_color = "#56b6c2"
+timeout = 3s
 
 [urgency_normal]
-foreground = "#abb2bf"
+foreground  = "#abb2bf"
 frame_color = "#56b6c2"
+timeout = 6s
 
 [urgency_critical]
-foreground = "#e06c75"
+foreground  = "#e06c75"
 frame_color = "#d19a66"
+timeout = 9s
