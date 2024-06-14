@@ -1,5 +1,5 @@
 # Exports
-export PATH=$PATH:$HOME/.local/bin:/usr/local/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.npm-global/bin:$HOME/.cargo/bin
 export ZSH="$HOME/.oh-my-zsh"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export HISTFILE=$HOME/.cache/zsh/zsh_history
