@@ -12,22 +12,27 @@ import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 
 -- Layout Definitions
-import XMonad.Layout.WindowNavigation
+import XMonad.Layout.Renamed
 import XMonad.Layout.Spacing
+import XMonad.Layout.WindowNavigation
+
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.Spiral
 import XMonad.Layout.Grid
 import XMonad.Layout.TwoPane
 import XMonad.Layout.NoBorders
-import XMonad.Layout.Renamed
 
 -- Misc
 import XMonad.Actions.UpdatePointer
+import XMonad.Actions.TiledWindowDragging
 
 -- Some app declaration
 myTerminal    = "kitty"   :: String
 myWebBrowser  = "firefox" :: String
 myFileManager = "pcmanfm" :: String
+
+myBorderWidth = 2
+gapSize = 7
 
 -- Workspaces icons
 myWorkspaces :: [String]
@@ -37,7 +42,7 @@ myWorkspaces = [" \61728 ", " \983609 ", " \985630 ", " \983577 ", " \61912 ", "
 -- Define active layouts
 myLayout =  
   -- smartSpacing sets a gap between windows and screen
-  renamed [CutWordsLeft 1] . smartBorders . smartSpacing 7 . windowNavigation $   
+  renamed [CutWordsLeft 1] . smartBorders . smartSpacing gapSize . windowNavigation $   
   Tall 1 (3/100) (1/2) |||              -- Vertical master and stack layout
   Full |||                              -- Fullscreen layout
   Mirror (Tall 1 (3/100) (13/25)) |||   -- Horisontal master and stack layout 
@@ -115,6 +120,12 @@ myKeys = [
   ++ -- Move focused windows to worspace
   [("M-S-" ++ show n, windows $ W.shift x) | (n, x) <- zip [1..9] myWorkspaces]
 
+-- Mouse bindings
+myMouseBindings :: [( (ButtonMask, Button), Window -> X() )]
+myMouseBindings = [
+  ( (myModMask .|. shiftMask , button1), dragWindow)  -- Drag window to change position
+  ]
+
 
 main :: IO()
 main = do
@@ -126,7 +137,7 @@ main = do
   workspaces = myWorkspaces,
   keys = (`mkKeymap` myKeys), 
 
-  borderWidth =2,
+  borderWidth = myBorderWidth,
   normalBorderColor = background,
   focusedBorderColor = blue,
 
@@ -144,7 +155,7 @@ main = do
     ppOutput = hPutStrLn startXmobar
   } 
   >> updatePointer (0.5 , 0.5) (0.5 , 0.5) -- set pointer position
-}
+} `additionalMouseBindings` myMouseBindings
 
 yellow, blue, gray, green, cyan, magenta, red, foreground, background :: String
 yellow      = "#E5C07B"
