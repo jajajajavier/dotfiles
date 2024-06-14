@@ -1,4 +1,4 @@
-import = ["/home/javier/.config/alacritty/themes/onedark.toml"]
+import = ["~/.config/alacritty/themes/onedark.toml"]
 live_config_reload = true
 
 [cursor]
