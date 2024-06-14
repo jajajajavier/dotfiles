@@ -10,4 +10,8 @@ elif [ $perc -le 75 ]; then echo -n "󰃟 "
 else echo -n "󰃠 "
 fi
 
+if [ $perc -le 9 ]; then echo -n "  "
+elif [ $perc -le 99 ]; then echo -n " "
+fi
+
 echo -n "$perc%</fc>"
