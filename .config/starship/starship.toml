@@ -1,6 +1,6 @@
 format = """
 $status    $cmd_duration
-$username[@](green)$hostname$localip$directory$git_branch$git_status$package$python${custom.cpp}
+$username[@](green)$hostname$localip$directory$git_branch$git_status$package$python${custom.cpp}$haskell$nodejs
  [\\$](cyan) """
 
 add_newline = false
