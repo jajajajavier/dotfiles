@@ -1,0 +1,38 @@
+set selection-clipboard clipboard
+
+# Default colors for zathura
+set default-bg "#1e2127"
+set default-fg "#abb2bf"
+
+# Statusbar and completion font
+set font "JetBrainsMono NF 12"
+
+# Color for highlight search 
+set highlight-color "rgba(86, 182, 194, 0.25)"
+set highlight-active-color "rgba(152,195,121, 0.5)"
+
+# Statusbar
+set statusbar-bg "#31353f"
+set statusbar-fg "#abb2bf"
+set statusbar-h-padding 8
+set statusbar-v-padding 4
+
+# inputbar colors
+set inputbar-bg "#1e2127"
+set inputbar-fg "#abb2bf"
+
+# Completion
+set completion-bg "#31353F"
+set completion-fg "#abb2bf"
+set completion-group-bg "#1e2127"
+set completion-group-fg "#abb2bf"
+set completion-highlight-bg "#61afef"
+set completion-highlight-fg "#31353f"
+
+# Notifications
+set notification-bg "#1e2127"
+set notification-fg "#abb2bf"
+set notification-warning-bg "#1e2127"
+set notification-warning-fg "#d19a66"
+set notification-error-bg "#1e2127"
+set notification-error-fg "#e06c75"
