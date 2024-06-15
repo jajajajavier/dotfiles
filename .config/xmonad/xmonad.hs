@@ -65,7 +65,9 @@ myKeys = [
   ("M-<Return>",    spawn myTerminal),
   ("M-f",           spawn myWebBrowser),
   ("M-e",           spawn myFileManager),
-  ("M-r",           spawn "rofi -show drun"),             -- Run applications
+  ("M-a",           spawn "rofi-launcher"),               -- Run applications
+  ("M-a",           spawn "rofi-power"),                  -- Launch powermenu
+  ("M-a",           spawn "rofi-screenshot"),             -- Take screenshot
   ("M1-C-l",        spawn "betterlockscreen -l dimblur"), -- Lock the screen (M1 = alt) 
 
   -- Window Management

@@ -1,0 +1,59 @@
+@import "themes/onedark.rasi"
+
+configuration {
+    show-icons:         false;
+}
+
+* {
+  font:                 "JetBrainsMono NF 20";
+}
+
+window {
+    location:           west;
+    anchor:             west;
+    width:              150px;
+    x-offset:           7px;
+    border:             2px solid;
+    border-color:       @border;
+    background-color:   @background;
+}
+
+mainbox {
+    enabled:            true;
+    padding:            16px;
+    background-color:   @background;
+    children:           [ "listview" ];
+}
+
+listview {
+    enabled:            true;
+    columns:            1;
+    lines:              4;
+    cycle:              false;
+    scrollbar:          false;
+    layout:             vertical;
+    spacing:            16px;
+    background-color:   @background;
+}
+
+element {
+    enabled:            true;
+    padding:            32px 16px;
+    border:             1px solid;
+    border-color:       @selected;
+    background-color:   @background-light;
+    text-color:         @foreground;
+}
+element-text {
+    background-color:   transparent;
+    text-color:         @foreground;
+    vertical-align:     0.5;
+    horizontal-align:   0.5;
+}
+
+element selected {
+    background-color:   @selected;
+    text-color:         @foreground;
+    border:             2px solid;
+    border-color:       @border;
+}

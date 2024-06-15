@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+lock="󰌾"
+poweroff=""
+reboot=""
+suspend=""
+logout="󰍃"
+
+selected=`echo -e "$lock\n$poweroff\n$reboot\n$suspend\n$logout" |
+  rofi -dmenu -theme ~/.config/rofi/power.rasi`
+
+if   [[ $selected == $lock      ]]; then
+  betterlockscreen -l dimblur
+elif [[ $selected == $poweroff  ]]; then
+  shutdown now
+elif [[ $selected == $reboot    ]]; then
+  systemctl reboot
+elif [[ $selected == $suspend   ]]; then
+  systemctl suspend
+elif [[ $selected == $logout    ]]; then
+  kill -9 -1
+fi

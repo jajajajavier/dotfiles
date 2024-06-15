@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+desktop="󰇄 "
+region="󰆞 "
+count_3="󰔛 3s"
+count_10="󰔛 10s"
+
+selected=`echo -e "$desktop\n$region\n$count_3\n$count_10" | 
+  rofi -dmenu -theme ~/.config/rofi/screenshot.rasi`
+
+dir="`xdg-user-dir PICTURES`/Screenshots"
+name="Screenshot_`date +%Y-%m-%d_%H:%M:%S`.png"
+
+if [[ ! -d $dir ]]; then
+	mkdir -p $dir
+fi
+
+copy () {
+	tee $name | xclip -selection clipboard -t image/png
+}
+
+shot () {
+  sleep 0.25
+ 	cd $dir
+  maim -u -f png | copy
+}
+
+shotregion () {
+ 	cd $dir 
+  maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | copy
+}
+
+shot3 () {
+  sleep 3
+  cd $dir
+  maim -u -f png | copy
+}
+
+shot10 () {
+  sleep 10
+  cd $dir
+  maim -u -f png | copy
+}
+
+if   [[ $selected == $desktop   ]]; then shot
+elif [[ $selected == $region    ]]; then shotregion
+elif [[ $selected == $count_3   ]]; then shot3
+elif [[ $selected == $count_10  ]]; then shot10
+fi
+
+ristretto $dir/$file &

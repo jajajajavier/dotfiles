@@ -1,0 +1,131 @@
+@import "themes/onedark.rasi"
+
+configuration {
+	modi:                     "drun";
+    show-icons:             true;
+    display-drun:           "Search:";
+	drun-display-format:      "{name}";
+}
+
+* {
+  font:                     "Noto Sans 14";
+}
+
+window {
+  location:                 center;
+  anchor:                   center;
+  fullscreen:               false;
+  width:                    512px;
+  x-offset:                 0px;
+  y-offset:                 0px;
+  enabled:                  true;
+  margin:                   0px;
+  padding:                  0px;
+  border:                   2px solid;
+  border-radius:            0px;
+  border-color:             @border;
+  background-color:         @background;
+}
+
+mainbox {
+  enabled:                  true;
+  spacing:                  32px;
+  margin:                   0px;
+  padding:                  16px;
+  background-color:         @background;
+  children:                 [ "inputbar", "listview" ];
+}
+
+inputbar {
+  enabled:                  true;
+  spacing:                  16px;
+  margin:                   0px;
+  padding:                  16px;
+  border:                   2px solid;
+  border-radius:            0px;
+  border-color:             @border;
+  background-color:         @input;
+  text-color:               @foreground;
+  children:                 [ "prompt", "entry" ];
+}
+
+prompt {
+  enabled:                  true;
+  background-color:         @input;
+  text-color:               @foreground;
+}
+
+textbox-prompt-colon {
+  enabled:                  true;
+  expand:                   false;
+  background-color:         @input;
+  text-color:               @foreground;
+}
+
+entry {
+  enabled:                  true;
+  cursor:                   text;
+  background-color:         @input;
+  text-color:               @foreground;
+}
+
+listview {
+  enabled:                  true;
+  columns:                  1;
+  lines:                    8;
+  cycle:                    false;
+  dynamic:                  false;
+  scrollbar:                false;
+  layout:                   vertical;
+  reverse:                  false;
+  fixed-height:             true;
+  fixed-columns:            true;
+  spacing:                  4px;
+  margin:                   8px;
+  padding:                  2px;
+  background-color:         @background;
+  text-color:               @foreground;
+}
+scrollbar {
+  enabled: false;
+}
+
+element {
+  enabled:                  true;
+  spacing:                  16px;
+  margin:                   0px;
+  padding:                  8px;
+  border:                   0px solid;
+  background-color:         @background;
+  text-color:               @foreground;
+  orientation:              horizontal;
+}
+element normal.normal {
+  background-color:         @background;
+  text-color:               @foreground;
+}
+
+element selected.normal {
+  background-color:         @selected;
+  text-color:               @foreground;
+}
+element-icon {
+  background-color:         transparent;
+  size:                     32px;
+}
+element-text {
+  background-color:         transparent;
+  text-color:               @foreground;
+  vertical-align:           0.5;
+}
+
+error-message {
+  padding:                  8px;
+  border-radius:            0px;
+  background-color:         @background;
+  text-color:               @foreground;
+}
+textbox {
+  background-color:         @background;
+  text-color:               @foreground;
+}
