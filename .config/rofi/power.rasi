@@ -12,7 +12,7 @@ window {
     location:           east;
     anchor:             east;
     width:              150px;
-    x-offset:           7px;
+    x-offset:           -7px;
     border:             2px solid;
     border-color:       @border;
     background-color:   @background;
