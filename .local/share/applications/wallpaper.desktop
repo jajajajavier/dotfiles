@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0.99
+Name=Wallpaper
+Exec=/home/javier/.local/bin/wallpaper %F
+Icon=image-viewer
+Terminal=false
+Categories=Graphics
