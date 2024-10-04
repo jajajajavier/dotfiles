@@ -17,10 +17,9 @@ fi
 alias manga-cli="/usr/local/bin/manga-cli -o 'zathura -c ~/.config/zathura/light/zathurarc'"
 alias py='python'
 
-[ -f "/home/javier/.ghcup/env" ] && . "/home/javier/.ghcup/env" # ghcup-env
+source $HOME/.config/zsh_plugins/sudo.plugin.zsh
 
-# source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# source /usr/share/zsh/plugins/sudo/sudo.zsh
+[ -f "/home/javier/.ghcup/env" ] && . "/home/javier/.ghcup/env" # ghcup-env
 
 # Starship prompt
 eval "$(starship init zsh)"
