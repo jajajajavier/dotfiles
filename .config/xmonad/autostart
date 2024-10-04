@@ -2,6 +2,7 @@
 setxkbmap latam
 xsetroot -cursor_name left_ptr &
 ~/.fehbg &
+wallpaper &
 picom &
 
 # System Tray

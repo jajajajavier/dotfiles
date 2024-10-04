@@ -36,8 +36,8 @@ gapSize = 7
 
 -- Workspaces icons
 myWorkspaces :: [String]
-myWorkspaces = [" \61728 ", " \983609 ", " \985630 ", " \983577 ", " \61912 ", " \62676 ", " \61441 ", " \62599 ", " \62003 "]
--- ["  ", " 󰈹 ", " 󰨞 ", " 󰈙 ", "  ", "  ", "  ", "  ", "  "]
+myWorkspaces = [" \61728 ", " \983609 ", " \985630 ", " \983577 ", " \61912 ", " \62676 ", " \61441 ", " \986194 ", " \62003 "]
+-- ["  ", " 󰈹 ", " 󰨞 ", " 󰈙 ", "  ", "  ", "  ", " 󰱒 ", "  "]
 
 -- Define active layouts
 myLayout =  
@@ -159,6 +159,7 @@ main = do
   >> updatePointer (0.5 , 0.5) (0.5 , 0.5) -- set pointer position
 } `additionalMouseBindings` myMouseBindings
 
+-- TODO: implement a system that change color theme also in xmobar
 yellow, blue, gray, green, cyan, magenta, red, foreground, background :: String
 yellow      = "#E5C07B"
 blue        = "#61AFEF" 
