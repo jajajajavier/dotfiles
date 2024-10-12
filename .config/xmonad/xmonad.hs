@@ -29,7 +29,7 @@ import XMonad.Actions.TiledWindowDragging
 -- Some app declaration
 myTerminal    = "kitty"   :: String
 myWebBrowser  = "firefox" :: String
-myFileManager = "pcmanfm" :: String
+myFileManager = "pcmanfm-qt" :: String
 
 myBorderWidth = 2
 gapSize = 7
@@ -65,7 +65,7 @@ myKeys = [
   ("M-<Return>",    spawn myTerminal),
   ("M-f",           spawn myWebBrowser),
   ("M-e",           spawn myFileManager),
-  ("M-a",           spawn "rofi-launcher"),               -- Run applications
+  ("M-r",           spawn "rofi-launcher"),               -- Run applications
   ("M-<Backspace>", spawn "rofi-power"),                  -- Launch powermenu
   ("M-S-s",         spawn "rofi-screenshot"),             -- Take screenshot
   ("M1-C-l",        spawn "betterlockscreen -l dimblur"), -- Lock the screen (M1 = alt) 
@@ -104,6 +104,8 @@ myKeys = [
   ("<XF86AudioLowerVolume>", spawn "pamixer -d 5"),
   ("<XF86AudioMute>", spawn "pamixer -t"),                -- Toggle mute the speakers
   ("<XF86AudioMicMute>",   spawn "pamixer --source <input_source> -t"),  -- Toggle mute the mic
+  ("M-p",           spawn "playerctl play-pause"),        -- toggle play/pause music
+  ("M-S-p",         spawn "playerctl shuffle Toggle"),    -- toggle shuffle music
 
   -- Brightness
   ("<XF86MonBrightnessUp>",   spawn "brightnessctl s +5%"),
