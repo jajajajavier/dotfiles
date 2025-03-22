@@ -5,6 +5,8 @@ export NPM_CONFIG_PREFIX=~/.npm-global
 export HISTFILE=$HOME/.cache/zsh/zsh_history
 export TERM="xterm-256color"
 
+[ -f "/home/javier/.ghcup/env" ] && . "/home/javier/.ghcup/env" # ghcup-env
+
 # define editor
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim --clean'
@@ -13,13 +15,21 @@ else
   export EDITOR='nvim'
 fi
 
+# Completion
+autoload -Uz compinit
+compinit
+
 # Aliases
-alias manga-cli="/usr/local/bin/manga-cli -o 'zathura -c ~/.config/zathura/light/zathurarc'"
-alias py='python'
+alias py='python3'
+alias yt='yt-dlp'
 
+alias l='ls --color=always'
+alias ll='ls --color=always -lh'
+alias la='ls --color=always -a'
+alias lla='ls --color=always -lha'
+
+# Plugins
 source $HOME/.config/zsh_plugins/sudo.plugin.zsh
-
-[ -f "/home/javier/.ghcup/env" ] && . "/home/javier/.ghcup/env" # ghcup-env
 
 # Starship prompt
 eval "$(starship init zsh)"
