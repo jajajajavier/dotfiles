@@ -1,0 +1,162 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMonoNF, noto-sans;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: #282c34;
+}
+
+#tags > button {
+    color: #abb2bf;
+    padding: 0 2px 0 2px;
+}
+
+#tags > button.occupied {
+    background-image: linear-gradient(to bottom, transparent 90%, #56b6c2 90%);
+    background-size: 65% 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+#tags > button.focused {
+    background-color: #56b6c2;
+    color: #282c34;
+}
+
+#tags button.urgent {
+    color: #e06c75;
+}
+
+#window {
+    background-color: #353535;
+    color: #abb2bf;
+    padding: 0 6px 0 6px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#wireplumber {
+    background-color: #282c34;
+    color: #56b6c2;
+    padding: 0 12px 0 12px;
+}
+
+#battery {
+    background-color: #282c34;
+    color: #d19a66;
+    padding: 0 12px 0 12px;
+}
+
+#battery.charging, #battery.plugged {
+    color: #98c379;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#backlight {
+    background-color: #282c34;
+    color: #FFFFFF;
+    padding: 0 12px 0 12px;
+}
+
+#custom-memory {
+    background: #d19a66;
+    color: #282c34;
+    padding: 0 6px 0 6px;
+}
+#memory {
+    background-color: #353535;
+    color: #d19a66;
+    padding: 0 6px 0 6px;
+}
+
+#custom-cpu {
+    background: #56b6c2;
+    color: #282c34;
+    padding: 0 6px 0 6px;
+}
+#cpu {
+    background-color: #353535;
+    color: #56b6c2;
+    padding: 0 6px 0 6px;
+}
+
+#custom-date-icon{
+    background: #61afef;
+    color: #282c34;
+    font-size: 16px;
+    padding: 0 0 0 8px;
+}
+#custom-date{
+    background: #353535;
+    color: #61afef;
+    padding: 0 6px 0 6px;
+}
+
+#custom-clock {
+    background: #c678dd;
+    color: #282c34;
+    font-size: 16px;
+    padding: 0 0 0 6px;
+}
+#clock {
+    background-color: #353535;
+    color: #c678dd;
+    padding: 0 6px 0 6px;
+}
+
+#tray {
+    background-color: #282c34;
+    padding: 0 6px 0 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/*
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+*/

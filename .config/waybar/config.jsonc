@@ -1,0 +1,90 @@
+{
+    "layer": "top",
+    "height": 28,
+    "spacing": 0,
+    "modules-left": [
+        "dwl/tags", 
+        "dwl/window", 
+        "custom/music"
+    ],
+    "modules-center": [""],
+    "modules-right": [
+        "wireplumber", 
+        "battery", 
+        "backlight",  
+        "custom/memory",
+        "memory", 
+        "custom/cpu",
+        "cpu", 
+        "custom/date-icon",
+        "custom/date",
+        "custom/clock", 
+        "clock", 
+        "tray"],
+
+    "dwl/window": {
+        "format": "{layout}"
+    },
+
+    "custom/music": {
+        "exec-if": "playerctl metadata &> /dev/null",
+        "exec": "$HOME/.config/waybar/media.sh",
+        "format": "  󰝚  {icon}{text}",
+        "return-type": "json",
+        "format-icons": {
+            "Playing": "",
+            "Paused": ""
+        },
+        "interval": 1,
+        "max-length":80
+    },
+
+    "wireplumber" : {
+        "format" : "{icon} {volume}%",
+        "format-muted": " ",
+        "format-icons": ["", "", " "]
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"]
+    },
+
+    "custom/memory": {
+        "format": "MEM"
+    },
+    "memory" : {
+        "format": "{percentage}%"
+    },
+
+    "custom/cpu": {
+        "format": "CPU"
+    },
+    "cpu": {
+        "format": "{usage}%"
+    },
+
+    "custom/date-icon": {
+        "format": "󰃭 "
+    },
+    "custom/date": {
+        "exec": "date +'%a, %d %b %y'"
+    },
+
+    "custom/clock": {
+        "format": " "
+    },
+    "clock": {
+        "format": "{:%H:%M}"
+    },
+
+    "tray": {
+        "spacing": 6
+    }
+
+}
