@@ -1,11 +1,8 @@
 # Exports
-export PATH=$PATH:$HOME/.npm-global/bin:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export NPM_CONFIG_PREFIX=~/.npm-global
 export HISTFILE=$HOME/.cache/zsh/zsh_history
-export TERM="xterm-256color"
-
-[ -f "/home/javier/.ghcup/env" ] && . "/home/javier/.ghcup/env" # ghcup-env
 
 # define editor
 if [[ -n $SSH_CONNECTION ]]; then
