@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-python3 $HOME/Pictures/wallpapers/main.py $1

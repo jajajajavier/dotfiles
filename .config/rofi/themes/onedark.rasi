@@ -1,8 +1,0 @@
-* {
-  background:       #1e2127;
-  background-light: #282c34;
-  foreground:       #abb2bf;
-  border:           #56b6c2;
-  selected:         #31353F;
-  input:            #282c34;
-}
